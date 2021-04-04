@@ -35,15 +35,15 @@ jobs:
         GIT_OWNER_EMAIL: ${{ secrets.GIT_OWNER_EMAIL }}
         GITHUB_PUSH_TOKEN: ${{ secrets.GITHUB_PUSH_TOKEN }}
       run: |
-        git config user.email "$GIT_OWNER_EMAIL"
-        git config user.name "gnclmorais"
+        git config user.email "github.bookshelf@captnemo.in"
+        git config user.name "Nemo (Bookshelf)"
         git status --porcelain
         if [[ `git status --porcelain` ]]; then
           git add index.html
           git add CNAME LICENSE
           git commit -a -m "Update bookshelf at `date +'%Y-%m-%d'`"
           git remote rm origin
-          git remote add origin https://gnclmorais:$GITHUB_PUSH_TOKEN@github.com/gnclmorais/bookshelf.git
+          git remote add origin https://captn3mm0:$GITHUB_PUSH_TOKEN@github.com/captn3m0/bookshelf.git
           git push --force origin HEAD:gh-pages
         else
           echo 'Unable to detect changes'
