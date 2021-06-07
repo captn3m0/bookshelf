@@ -1,0 +1,1924 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Some description">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bookshelf</title>
+    <link rel="icon" href="data:image/svg+xml,&lt;svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22&gt;&lt;text y=%22.9em%22 font-size=%2290%22&gt;📚&lt;/text&gt;&lt;/svg&gt;">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Chivo:700i&amp;display=swap&amp;text=My%20bookshelf1234567890Blog,GitHub,TwitterCheck%20out%20the%20code&amp;display=swap">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Lora&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Chivo:700i&amp;display=swap&amp;text=My%20bookshelf1234567890Blog,GitHub,TwitterCheck%20out%20the%20code&amp;display=swap" media="print" onload="this.media=&quot;all&quot;">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora&amp;display=swap" media="print" onload="this.media=&quot;all&quot;">
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Chivo:700i&amp;display=swap&amp;text=My%20bookshelf1234567890Blog,GitHub,TwitterCheck%20out%20the%20code&amp;display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora&amp;display=swap">
+    </noscript>
+    <style>:root {
+  --font-size-base: 20px;
+  --font-colour-body: teal;
+  --max-width: 800px;
+  --marker-colour: pink;
+}
+
+body {
+  font-family: 'Lora', serif;
+  font-size: var(--font-size-base);
+  color: var(--font-colour-body);
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+h1,
+h2 {
+  font-family: 'Chivo', serif;
+}
+
+h2 {
+  margin: 2rem 0 0.5em;
+}
+
+p {
+  line-height: 2rem;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+@media screen and (max-width: 900px) {
+  li {
+    margin-left: 25px;
+  }
+}
+li[data-rating="5"] {
+  position: relative;
+}
+li[data-rating="5"]::before {
+  position: absolute;
+  color: var(--font-colour-body);
+  content: '➺';
+  color: var(--marker-colour);
+  left: -25px;
+}
+
+li + li {
+  margin-top: 0.5rem;
+}
+
+.by,
+.author {
+  color: grey;
+}
+
+.highlight {
+  color: inherit;
+  text-decoration: none;
+  position: relative;
+  /* https://speckyboy.com/underline-text-effects-css */
+  background-image: linear-gradient(var(--marker-colour), var(--marker-colour));
+  background-repeat: no-repeat;
+  background-size: 100% 0.1em;
+  background-position: 0 88%;
+  transition: background-size 0.2s ease-in;
+}
+.highlight:hover {
+  background-size: 100% 88%;
+}
+
+.footnotes {
+  margin: 3rem 0;
+  position: relative;
+}
+.footnotes::before {
+  content: '☙';
+  display: block;
+  color: var(--marker-colour);
+  text-align: center;
+  left: 0;
+  right: 0;
+  margin: 5rem 0;
+}
+
+.footnotes__link,
+.footnotes__link:visited {
+  color: grey;
+  text-decoration: none;
+}
+.footnotes__link:hover {
+  color: var(--marker-colour);
+}
+
+.footer {
+  font-family: 'Chivo', serif;
+  margin: 5rem 0 3rem;
+  color: var(--marker-colour);
+}
+
+.footer__link {
+  color: var(--font-colour-body);
+}
+
+/** Utils */
+
+.pull-right {
+  float: right;
+}
+
+.marker-highlight {
+  color: var(--marker-colour);
+}
+
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>My bookshelf</h1>
+    </header>
+    <main>
+      <p>This is a collection of what I’ve read<sup><a class="footnotes__link" id="r1" href="#fn1">[1]</a></sup>
+        over the past years, automatically generated from my
+        <a class="highlight" href="https://goodreads.com/gnclmorais">Goodreads profile</a>. Entries indicated by
+        <span class="marker-highlight">➺</span>
+        are books I strongly advise.
+      </p>
+      <p>Last updated on
+        <time class="timestamp marker-highlight" datetime="2021/6/7">2021/6/7</time>.
+      </p>
+      <h2>2021</h2>
+      <ul>
+        <li class="book" data-rating="2"><a class="highlight" href="https://www.goodreads.com/book/show/10194157-shadow-and-bone">Shadow and Bone</a>
+          <span class="by">by</span>
+          <span class="author">Leigh Bardugo</span>
+        </li>
+        <li class="book" data-rating="4"><a class="highlight" href="https://www.goodreads.com/book/show/45154547-a-desolation-called-peace">A Desolation Called Peace</a>
+          <span class="by">by</span>
+          <span class="author">Arkady Martine</span>
+        </li>
+        <li class="book" data-rating="2" data-isbn="0441014763"><a class="highlight" href="https://www.goodreads.com/book/show/96594.Fearless">Fearless</a>
+          <span class="by">by</span>
+          <span class="author">Jack Campbell</span>
+        </li>
+        <li class="book" data-rating="3" data-isbn="0441014186"><a class="highlight" href="https://www.goodreads.com/book/show/112292.Dauntless">Dauntless</a>
+          <span class="by">by</span>
+          <span class="author">Jack Campbell</span>
+        </li>
+        <li class="book" data-rating="5"><a class="highlight" href="https://www.goodreads.com/book/show/37794149-a-memory-called-empire">A Memory Called Empire</a>
+          <span class="by">by</span>
+          <span class="author">Arkady Martine</span>
+        </li>
+        <li class="book" data-rating="3"><a class="highlight" href="https://www.goodreads.com/book/show/55765360-breathe-fiyah">Breathe FIYAH</a>
+          <span class="by">by</span>
+          <span class="author">Brent Lambert</span>
+        </li>
+        <li class="book" data-rating="3" data-isbn="1250765374"><a class="highlight" href="https://www.goodreads.com/book/show/53205854-fugitive-telemetry">Fugitive Telemetry</a>
+          <span class="by">by</span>
+          <span class="author">Martha Wells</span>
+        </li>
+        <li class="book" data-rating="4"><a class="highlight" href="https://www.goodreads.com/book/show/1268479.Warbreaker">Warbreaker</a>
+          <span class="by">by</span>
+          <span class="author">Brandon Sanderson</span>
+        </li>
+      </ul>
+      <h2>2020</h2>
+      <ul>
+        <li class="book" data-rating="3"><a class="highlight" href="https://www.goodreads.com/book/show/25899877-drive">Drive</a>
+          <span class="by">by</span>
+          <span class="author">James S.A. Corey</span>
+        </li>
+        <li class="book" data-rating="4"><a class="highlight" href="https://www.goodreads.com/book/show/54615879-the-original">The Original</a>
+          <span class="by">by</span>
+          <span class="author">Brandon Sanderson</span>
+        </li>
+        <li class="book" data-rating="4"><a class="highlight" href="https://www.goodreads.com/book/show/53785694-the-last-stargazers">The Last Stargazers: The Enduring Story of Astronomy's Vanishing Explorers</a>
+          <span class="by">by</span>
+          <span class="author">Emily M. Levesque</span>
+        </li>
+        <li class="book" data-rating="4"><a class="highlight" href="https://www.goodreads.com/book/show/54511226-dawnshard">Dawnshard</a>
+          <span class="by">by</span>
+          <span class="author">Brandon Sanderson</span>
+        </li>
+        <li class="book" data-rating="2"><a class="highlight" href="https://www.goodreads.com/book/show/49425845-new-eden">New Eden</a>
+          <span class="by">by</span>
+          <span class="author">Kishore Tipirneni</span>
+        </li>
+        <li class="book" data-rating="4" data-isbn="1400030609"><a class="highlight" href="https://www.goodreads.com/book/show/62022.The_Queen_s_Gambit">The Queen's Gambit</a>
+          <span class="by">by</span>
+          <span class="author">Walter Tevis</span>
+        </li>
+        <li class="book" data-rating="4" data-isbn="1250166543"><a class="highlight" href="https://www.goodreads.com/book/show/34703445-edgedancer">Edgedancer</a>
+          <span class="by">by</span>
+          <span class="author">Brandon Sanderson</span>
+        </li>
+        <li class="book" data-rating="5"><a class="highlight" href="https://www.goodreads.com/book/show/52739530-bottle-of-lies">Bottle of Lies : Ranbaxy and the Dark Side of Indian Pharma</a>
+          <span class="by">by</span>
+          <span class="author">Katherine Eban</span>
+        </li>
+        <li class="book" data-rating="3" data-isbn="1593072287"><a class="highlight" href="https://www.goodreads.com/book/show/35870.Ghost_in_the_Shell">Ghost in the Shell</a>
+          <span class="by">by</span>
+          <span class="author">Masamune Shirow</span>
+        </li>
+        <li class="book" data-rating="3"><a class="highlight" href="https://www.goodreads.com/book/show/57623348-home">Home: Habitat, Range, Niche, Territory</a>
+          <span class="by">by</span>
+          <span class="author">Martha Wells</span>
+        </li>
+        <li class="book" data-rating="4"><a class="highlight" href="https://www.goodreads.com/book/show/49203999-rhythm-of-war">Rhythm of War</a>
+          <span class="by">by</span>
+          <span class="author">Brandon Sanderson</span>
+        </li>
+        <li class="book" data-rating="3"><a class="highlight" href="https://www.goodreads.com/book/show/27108939-dark-one-vol-1">Dark One Vol. 1</a>
+          <span class="by">by</span>
+          <span class="author">Brandon Sanderson</span>
+        </li>
+        <li class="book" data-rating="4" data-isbn="0241980089"><a class="highlight" href="https://www.goodreads.com/book/show/30849421-things-that-can-and-cannot-be-said">Things That Can and Cannot Be Said</a>
+          <span class="by">by</span>
+          <span class="author">John Cusack</span>
+        </li>
+        <li class="book" data-rating="4" data-isbn="1250229863"><a class="highlight" href="https://www.goodreads.com/book/show/52381770-network-effect">Network Effect</a>
+          <span class="by">by</span>
+          <span class="author">Martha Wells</span>
+        </li>
+        <li class="book" data-rating="3"><a class="highlight" href="https://www.goodreads.com/book/show/35519109-exit-strategy">Exit Strategy</a>
+          <span class="by">by</span>
+          <span class="author">Martha Wells</span>
+        </li>
+        <li class="book" data-rating="5" data-isbn="0786848812"><a class="highlight" href="https://www.goodreads.com/book/show/114725.Artemis_Fowl">Artemis Fowl: The Graphic Novel</a>
+          <span class="by">by</span>
+          <span class="author">Eoin Colfer</span>
+        </li>
+        <li class="book" data-rating="4"><a class="highlight" href="https://www.goodreads.com/book/show/39298848-white-sand-volume-3">White Sand, Volume 3</a>
+          <span class="by">by</span>
+          <span class="author">Brandon Sanderson</span>
+        </li>
+        <li class="book" data-rating="3" data-isbn="1250191785"><a class="highlight" href="https://www.goodreads.com/book/show/35519101-rogue-protocol">Rogue Protocol</a>
+          <span class="by">by</span>
+          <span class="author">Martha Wells</span>
+        </li>
+        <li class="book" data-rating="4" data-isbn="1250186927"><a class="highlight" href="https://www.goodreads.com/book/show/36223860-artificial-condition">Artificial Condition</a>
+          <span class="by">by</span>
+          <span class="author">Martha Wells</span>
+        </li>
+        <li class="book" data-rating="0"><a class="highlight" href="https://www.goodreads.com/book/show/33551363-white-sand-volume-2">White Sand, Volume 2</a>
+          <span class="by">by</span>
+          <span class="author">Brandon Sanderson</span>
+        </li>
+        <li class="book" data-rating="4"><a class="highlight" href="https://www.goodreads.com/book/show/40603587-the-last-wish">The Last Wish</a>
+          <span class="by">by</span>
+          <span class="author">Andrzej Sapkowski</span>
+        </li>
+        <li class="book" data-rating="4" data-isbn="1451666179"><a class="highlight" href="https://www.goodreads.com/book/show/17571564-hyperbole-and-a-half">Hyperbole and a Half: Unfortunate Situations, Flawed Coping Mechanisms, Mayhem, and Other Things That Happened</a>
+          <span class="by">by</span>
+          <span class="author">Allie Brosh</span>
+        </li>
+        <li class="book" data-rating="4" data-isbn="0375840400"><a class="highlight" href="https://www.goodreads.com/book/show/45978.Eldest">Eldest</a>
+          <span class="by">by</span>
+          <span class="author">Christopher Paolini</span>
+        </li>
+        <li class="book" data-rating="3" data-isbn="0375826696"><a class="highlight" href="https://www.goodreads.com/book/show/113436.Eragon">Eragon</a>
+          <span class="by">by</span>
+          <span class="author">Christopher Paolini</span>
+        </li>
+        <li class="book" data-rating="3" data-isbn="0375826726"><a class="highlight" href="https://www.goodreads.com/book/show/2248573.Brisingr">Brisingr</a>
+          <span class="by">by</span>
+          <span class="author">Christopher Paolini</span>
+        </li>
+        <li class="book" data-rating="2" data-isbn="0684830493"><a class="highlight" href="https://www.goodreads.com/book/show/2165.The_Old_Man_and_the_Sea">The Old Man and the Sea</a>
+          <span class="by">by</span>
+          <span class="author">Ernest Hemingway</span>
+        </li>
+        <li class="book" data-rating="3" data-isbn="0143131842"><a class="highlight" href="https://www.goodreads.com/book/show/35031085-frankenstein">Frankenstein: The 1818 Text</a>
+          <span class="by">by</span>
+          <span class="author">Mary Wollstonecraft Shelley</span>
+        </li>
+        <li class="book" data-rating="3" data-isbn="0375759239"><a class="highlight" href="https://www.goodreads.com/book/show/8909.The_War_of_the_Worlds">The War of the Worlds</a>
+          <span class="by">by</span>
+          <span class="author">H.G. Wells</span>
+        </li>
+        <li class="book" data-rating="2" data-isbn="0142437247"><a class="highlight" href="https://www.goodreads.com/book/show/153747.Moby_Dick_or_the_Whale">Moby-Dick or, the Whale</a>
+          <span class="by">by</span>
+          <span class="author">Herman Melville</span>
+        </li>
+        <li class="book" data-rating="5" data-isbn="0140449264"><a class="highlight" href="https://www.goodreads.com/book/show/7126.The_Count_of_Monte_Cristo">The Count of Monte Cristo</a>
+          <span class="by">by</span>
+          <span class="author">Alexandre Dumas</span>
+        </li>
+        <li class="book" data-rating="4" data-isbn="0451528956"><a class="highlight" href="https://www.goodreads.com/book/show/51496.The_Strange_Case_of_Dr_Jekyll_and_Mr_Hyde">The Strange Case of Dr. Jekyll and Mr. Hyde</a>
+          <span class="by">by</span>
+          <span class="author">Robert Louis Stevenson</span>
+        </li>
+        <li class="book" data-rating="5"><a class="highlight" href="https://www.goodreads.com/book/show/33507.Twenty_Thousand_Leagues_Under_the_Sea">Twenty Thousand Leagues Under the Sea</a>
+          <span class="by">by</span>
+          <span class="author">Jules Verne</span>
+        </li>
+        <li class="book" data-rating="3"><a class="highlight" href="https://www.goodreads.com/book/show/2493.The_Time_Machine">The Time Machine</a>
+          <span class="by">by</span>
+          <span class="author">H.G. Wells</span>
+        </li>
+        <li class="book" data-rating="4"><a class="highlight" href="https://www.goodreads.com/book/show/32758901-all-systems-red">All Systems Red</a>
+          <span class="by">by</span>
+          <span class="author">Martha Wells</span>
+        </li>
+        <li class="book" data-rating="4"><a class="highlight" href="https://www.goodreads.com/book/show/13079982-fahrenheit-451">Fahrenheit 451</a>
+          <span class="by">by</span>
+          <span class="author">Ray Bradbury</span>
+        </li>
+        <li class="book" data-rating="3"><a class="highlight" href="https://www.goodreads.com/book/show/23299046-the-hedge-knight-issue-1">The Hedge Knight, Issue 1</a>
+          <span class="by">by</span>
+          <span class="author">Ben Avery</span>
+        </li>
+        <li class="book" data-rating="4"><a class="highlight" href="https://www.goodreads.com/book/show/51847076-blood-of-empire">Blood of Empire</a>
+          <span class="by">by</span>
+          <span class="author">Brian  McClellan</span>
+        </li>
+        <li class="book" data-rating="4"><a class="highlight" href="https://www.goodreads.com/book/show/18713259-worm">Worm</a>
+          <span class="by">by</span>
+          <span class="author">Wildbow</span>
+        </li>
+        <li class="book" data-rating="4" data-isbn="0679879242"><a class="highlight" href="https://www.goodreads.com/book/show/119322.The_Golden_Compass">The Golden Compass</a>
+          <span class="by">by</span>
+          <span class="author">Philip Pullman</span>
+        </li>
+        <li class="book" data-rating="5" data-isbn="1419729071"><a class="highlight" href="https://www.goodreads.com/book/show/41104077-invisible-women">Invisible Women: Data Bias in a World Designed for Men</a>
+          <span class="by">by</span>
+          <span class="author">Caroline Criado Pérez</span>
+        </li>
+        <li class="book" data-rating="5"><a class="highlight" href="https://www.goodreads.com/book/show/17250961-oathbringer">Oathbringer</a>
+          <span class="by">by</span>
+          <span class="author">Brandon Sanderson</span>
+        </li>
+        <li class="book" data-rating="4" data-isbn="0553283685"><a class="highlight" href="https://www.goodreads.com/book/show/77566.Hyperion">Hyperion</a>
+          <span class="by">by</span>
+          <span class="author">Dan Simmons</span>
+        </li>
+        <li class="book" data-rating="4"><a class="highlight" href="https://www.goodreads.com/book/show/28825810-ghosts-of-the-tristan-basin">Ghosts of the Tristan Basin</a>
+          <span class="by">by</span>
+          <span class="author">Brian  McClellan</span>
+        </li>
+        <li class="book" data-rating="0"><a class="highlight" href="https://www.goodreads.com/book/show/22814600-dracula">Dracula</a>
+          <span class="by">by</span>
+          <span class="author">Bram Stoker</span>
+        </li>
+      </ul>
+      <h2>2019</h2>
+      <ul>
+        <li class="book" data-rating="0" data-isbn="1449479618"><a class="highlight" href="https://www.goodreads.com/book/show/30754980-big-mushy-happy-lump">Big Mushy Happy Lump</a>
+          <span class="by">by</span>
+          <span class="author">Sarah Andersen</span>
+        </li>
+        <li class="book" data-rating="4"><a class="highlight" href="https://www.goodreads.com/book/show/45159464-starsight">Starsight</a>
+          <span class="by">by</span>
+          <span class="author">Brandon Sanderson</span>
+        </li>
+        <li class="book" data-rating="0"><a class="highlight" href="https://www.goodreads.com/book/show/36913851-the-legend-of-korra">The Legend of Korra: Turf Wars, Part Three</a>
+          <span class="by">by</span>
+          <span class="author">Michael Dante DiMartino</span>
+        </li>
+        <li class="book" data-rating="0"><a class="highlight" href="https://www.goodreads.com/book/show/50843183-spider-man-2019-2020-1">Spider-Man (2019-2020) #1</a>
+          <span class="by">by</span>
+          <span class="author">J.J. Abrams</span>
+        </li>
+        <li class="book" data-rating="4"><a class="highlight" href="https://www.goodreads.com/book/show/36559185-siege-of-tilpur">Siege of Tilpur</a>
+          <span class="by">by</span>
+          <span class="author">Brian  McClellan</span>
+        </li>
+        <li class="book" data-rating="4" data-isbn="0142403881"><a class="highlight" href="https://www.goodreads.com/book/show/6310.Charlie_and_the_Chocolate_Factory">Charlie and the Chocolate Factory</a>
+          <span class="by">by</span>
+          <span class="author">Roald Dahl</span>
+        </li>
+        <li class="book" data-rating="0" data-isbn="1444792466"><a class="highlight" href="https://www.goodreads.com/book/show/24500060-how-google-works">How Google Works</a>
+          <span class="by">by</span>
+          <span class="author">Eric Schmidt</span>
+        </li>
+        <li class="book" data-rating="0"><a class="highlight" href="https://www.goodreads.com/book/show/17364.Surely_You_re_Joking_Mr_Feynman_">Surely You're Joking, Mr. Feynman!</a>
+          <span class="by">by</span>
+          <span class="author">Richard P. Feynman</span>
+        </li>
+        <li class="book" data-rating="0" data-isbn="1472260082"><a class="highlight" href="https://www.goodreads.com/book/show/40662488-art-matters">Art Matters: Because Your Imagination Can Change the World</a>
+          <span class="by">by</span>
+          <span class="author">Neil Gaiman</span>
+        </li>
+        <li class="book" data-rating="3" data-isbn="1684151147"><a class="highlight" href="https://www.goodreads.com/book/show/36131928-the-expanse">The Expanse: Origins</a>
+          <span class="by">by</span>
+          <span class="author">James S.A. Corey</span>
+        </li>
+        <li class="book" data-rating="4" data-isbn="0316332879"><a class="highlight" href="https://www.goodreads.com/book/show/28335698-tiamat-s-wrath">Tiamat's Wrath</a>
+          <span class="by">by</span>
+          <span class="author">James S.A. Corey</span>
+        </li>
+        <li class="book" data-rating="3" data-isbn="1250180252"><a class="highlight" href="https://www.goodreads.com/book/show/37534869-zero-sum-game">Zero Sum Game</a>
+          <span class="by">by</span>
+          <span class="author">S.L. Huang</span>
+        </li>
+        <li class="book" data-rating="3"><a class="highlight" href="https://www.goodreads.com/book/show/43205859-children-of-the-nameless">Children of the Nameless</a>
+          <span class="by">by</span>
+          <span class="author">Brandon Sanderson</span>
+        </li>
+        <li class="book" data-rating="3"><a class="highlight" href="https://www.goodreads.com/book/show/2795053-the-umbrella-academy-vol-1">The Umbrella Academy, Vol. 1: The Apocalypse Suite</a>
+          <span class="by">by</span>
+          <span class="author">Gerard Way</span>
+        </li>
+        <li class="book" data-rating="5" data-isbn="0316491977"><a class="highlight" href="https://www.goodreads.com/book/show/7090.The_Soul_of_a_New_Machine">The Soul of a New Machine</a>
+          <span class="by">by</span>
+          <span class="author">Tracy Kidder</span>
+        </li>
+        <li class="book" data-rating="0" data-isbn="0385689225"><a class="highlight" href="https://www.goodreads.com/book/show/29780253-born-a-crime">Born a Crime: Stories From a South African Childhood</a>
+          <span class="by">by</span>
+          <span class="author">Trevor Noah</span>
+        </li>
+        <li class="book" data-rating="0"><a class="highlight" href="https://www.goodreads.com/book/show/13030110-all-you-zombies">All You Zombies</a>
+          <span class="by">by</span>
+          <span class="author">Robert A. Heinlein</span>
+        </li>
+        <li class="book" data-rating="4"><a class="highlight" href="https://www.goodreads.com/book/show/39846984-bad-blood">Bad Blood: Secrets and Lies in a Silicon Valley Startup</a>
+          <span class="by">by</span>
+          <span class="author">John Carreyrou</span>
+        </li>
+        <li class="book" data-rating="3" data-isbn="0316332836"><a class="highlight" href="https://www.goodreads.com/book/show/33357930-persepolis-rising">Persepolis Rising</a>
+          <span class="by">by</span>
+          <span class="author">James S.A. Corey</span>
+        </li>
+        <li class="book" data-rating="0" data-isbn="1477823832"><a class="highlight" href="https://www.goodreads.com/book/show/20727654-the-paper-magician">The Paper Magician</a>
+          <span class="by">by</span>
+          <span class="author">Charlie N. Holmberg</span>
+        </li>
+        <li class="book" data-rating="0" data-isbn="1534306919"><a class="highlight" href="https://www.goodreads.com/book/show/37491890-monstress-vol-3">Monstress, Vol. 3: Haven</a>
+          <span class="by">by</span>
+          <span class="author">Marjorie M. Liu</span>
+        </li>
+        <li class="book" data-rating="4"><a class="highlight" href="https://www.goodreads.com/book/show/29237221-saga-vol-9">Saga, Vol. 9</a>
+          <span class="by">by</span>
+          <span class="author">Brian K. Vaughan</span>
+        </li>
+        <li class="book" data-rating="4"><a class="highlight" href="https://www.goodreads.com/book/show/36047195-the-mad-lancers">The Mad Lancers</a>
+          <span class="by">by</span>
+          <span class="author">Brian  McClellan</span>
+        </li>
+        <li class="book" data-rating="5" data-isbn="0765391163"><a class="highlight" href="https://www.goodreads.com/book/show/28595941-arcanum-unbounded">Arcanum Unbounded: The Cosmere Collection</a>
+          <span class="by">by</span>
+          <span class="author">Brandon Sanderson</span>
+        </li>
+        <li class="book" data-rating="4" data-isbn="0553383043"><a class="highlight" href="https://www.goodreads.com/book/show/13642.A_Wizard_of_Earthsea">A Wizard of Earthsea</a>
+          <span class="by">by</span>
+          <span class="author">Ursula K. Le Guin</span>
+        </li>
+      </ul>
+      <h2>2018</h2>
+      <ul>
+        <li class="book" data-rating="0" data-isbn="1250107814"><a class="highlight" href="https://www.goodreads.com/book/show/40933227-factfulness">Factfulness: Ten Reasons We're Wrong About the World – and Why Things Are Better Than You Think</a>
+          <span class="by">by</span>
+          <span class="author">Hans Rosling</span>
+        </li>
+        <li class="book" data-rating="0" data-isbn="1449489788"><a class="highlight" href="https://www.goodreads.com/book/show/35924705-herding-cats">Herding Cats</a>
+          <span class="by">by</span>
+          <span class="author">Sarah Andersen</span>
+        </li>
+        <li class="book" data-rating="3" data-isbn="0356504263"><a class="highlight" href="https://www.goodreads.com/book/show/25877663-babylon-s-ashes">Babylon's Ashes</a>
+          <span class="by">by</span>
+          <span class="author">James S.A. Corey</span>
+        </li>
+        <li class="book" data-rating="5" data-isbn="1473217857"><a class="highlight" href="https://www.goodreads.com/book/show/36642458-skyward">Skyward</a>
+          <span class="by">by</span>
+          <span class="author">Brandon Sanderson</span>
+        </li>
+        <li class="book" data-rating="4"><a class="highlight" href="https://www.goodreads.com/book/show/39720794-legion">Legion: Lies of the Beholder</a>
+          <span class="by">by</span>
+          <span class="author">Brandon Sanderson</span>
+        </li>
+        <li class="book" data-rating="5"><a class="highlight" href="https://www.goodreads.com/book/show/22886612-nemesis-games">Nemesis Games</a>
+          <span class="by">by</span>
+          <span class="author">James S.A. Corey</span>
+        </li>
+        <li class="book" data-rating="0" data-isbn="1401238637"><a class="highlight" href="https://www.goodreads.com/book/show/15041842-the-sandman-volumes-1-10">The Sandman Volumes 1-10</a>
+          <span class="by">by</span>
+          <span class="author">Neil Gaiman</span>
+        </li>
+        <li class="book" data-rating="0"><a class="highlight" href="https://www.goodreads.com/book/show/26838903-how-the-marquis-got-his-coat-back">How the Marquis Got His Coat Back</a>
+          <span class="by">by</span>
+          <span class="author">Neil Gaiman</span>
+        </li>
+        <li class="book" data-rating="0"><a class="highlight" href="https://www.goodreads.com/book/show/25379828-a-gathering-of-friends-my-favourite-stories">A GATHERING OF FRIENDS: MY FAVOURITE STORIES</a>
+          <span class="by">by</span>
+          <span class="author">Ruskin Bond</span>
+        </li>
+        <li class="book" data-rating="0"><a class="highlight" href="https://www.goodreads.com/book/show/22628.The_Perks_of_Being_a_Wallflower">The Perks of Being a Wallflower</a>
+          <span class="by">by</span>
+          <span class="author">Stephen Chbosky</span>
+        </li>
+        <li class="book" data-rating="0" data-isbn="0061139378"><a class="highlight" href="https://www.goodreads.com/book/show/17061.Coraline">Coraline</a>
+          <span class="by">by</span>
+          <span class="author">Neil Gaiman</span>
+        </li>
+        <li class="book" data-rating="0" data-isbn="0062312553"><a class="highlight" href="https://www.goodreads.com/book/show/18738869-the-graveyard-book-volume-1">The Graveyard Book, Volume 1</a>
+          <span class="by">by</span>
+          <span class="author">Neil Gaiman</span>
+        </li>
+        <li class="book" data-rating="0" data-isbn="1439192812"><a class="highlight" href="https://www.goodreads.com/book/show/11256979-the-magic-of-reality">The Magic of Reality: How We Know What's Really True</a>
+          <span class="by">by</span>
+          <span class="author">Richard Dawkins</span>
+        </li>
+        <li class="book" data-rating="0" data-isbn="1400042313"><a class="highlight" href="https://www.goodreads.com/book/show/19826.Elements_of_Style">Elements of Style</a>
+          <span class="by">by</span>
+          <span class="author">Wendy Wasserstein</span>
+        </li>
+        <li class="book" data-rating="5"><a class="highlight" href="https://www.goodreads.com/book/show/33081262-the-fated-sky">The Fated Sky</a>
+          <span class="by">by</span>
+          <span class="author">Mary Robinette Kowal</span>
+        </li>
+        <li class="book" data-rating="5"><a class="highlight" href="https://www.goodreads.com/book/show/36238876-the-calculating-stars">The Calculating Stars</a>
+          <span class="by">by</span>
+          <span class="author">Mary Robinette Kowal</span>
+        </li>
+        <li class="book" data-rating="4" data-isbn="1491935677"><a class="highlight" href="https://www.goodreads.com/book/show/26759355-kubernetes">Kubernetes: Up &amp; Running</a>
+          <span class="by">by</span>
+          <span class="author">Kelsey Hightower</span>
+        </li>
+        <li class="book" data-rating="5"><a class="highlight" href="https://www.goodreads.com/book/show/40106498-the-new-oil--aadhaar-s-mixing-of-public-risk-and-private-profit-by-aria">The New Oil- Aadhaar’s mixing of public risk and private profit by ARIA THAKER</a>
+          <span class="by">by</span>
+          <span class="author">The Caravan Magazine</span>
+        </li>
+        <li class="book" data-rating="0"><a class="highlight" href="https://www.goodreads.com/book/show/34555107-the-thanos-quest">The Thanos Quest</a>
+          <span class="by">by</span>
+          <span class="author">Jim Starlin</span>
+        </li>
+        <li class="book" data-rating="4" data-isbn="1534300414"><a class="highlight" href="https://www.goodreads.com/book/show/33540347-monstress-vol-2">Monstress, Vol. 2: The Blood</a>
+          <span class="by">by</span>
+          <span class="author">Marjorie M. Liu</span>
+        </li>
+        <li class="book" data-rating="5" data-isbn="1506700403"><a class="highlight" href="https://www.goodreads.com/book/show/32470949-the-legend-of-korra">The Legend of Korra: Turf Wars, Part Two</a>
+          <span class="by">by</span>
+          <span class="author">Michael Dante DiMartino</span>
+        </li>
+        <li class="book" data-rating="5" data-isbn="1506700152"><a class="highlight" href="https://www.goodreads.com/book/show/33161035-the-legend-of-korra">The Legend of Korra: Turf Wars, Part One</a>
+          <span class="by">by</span>
+          <span class="author">Michael Dante DiMartino</span>
+        </li>
+        <li class="book" data-rating="4"><a class="highlight" href="https://www.goodreads.com/book/show/29396738-monstress-vol-1">Monstress, Vol. 1: Awakening</a>
+          <span class="by">by</span>
+          <span class="author">Marjorie M. Liu</span>
+        </li>
+        <li class="book" data-rating="4"><a class="highlight" href="https://www.goodreads.com/book/show/38492838-black-panther">Black Panther: Long Live the King #6</a>
+          <span class="by">by</span>
+          <span class="author">Nnedi Okorafor</span>
+        </li>
+        <li class="book" data-rating="4"><a class="highlight" href="https://www.goodreads.com/book/show/37823397-black-panther">Black Panther: Long Live the King #5</a>
+          <span class="by">by</span>
+          <span class="author">Nnedi Okorafor</span>
+        </li>
+        <li class="book" data-rating="5"><a class="highlight" href="https://www.goodreads.com/book/show/34963526-saga-vol-8">Saga, Vol. 8</a>
+          <span class="by">by</span>
+          <span class="author">Brian K. Vaughan</span>
+        </li>
+        <li class="book" data-rating="4" data-isbn="1534300600"><a class="highlight" href="https://www.goodreads.com/book/show/29237211-saga-vol-7">Saga, Vol. 7</a>
+          <span class="by">by</span>
+          <span class="author">Brian K. Vaughan</span>
+        </li>
+        <li class="book" data-rating="5" data-isbn="0356509311"><a class="highlight" href="https://www.goodreads.com/book/show/28811018-wrath-of-empire">Wrath of Empire</a>
+          <span class="by">by</span>
+          <span class="author">Brian  McClellan</span>
+        </li>
+        <li class="book" data-rating="4"><a class="highlight" href="https://www.goodreads.com/book/show/28862528-saga-vol-6">Saga, Vol. 6</a>
+          <span class="by">by</span>
+          <span class="author">Brian K. Vaughan</span>
+        </li>
+        <li class="book" data-rating="4" data-isbn="1632154382"><a class="highlight" href="https://www.goodreads.com/book/show/25451555-saga-vol-5">Saga, Vol. 5</a>
+          <span class="by">by</span>
+          <span class="author">Brian K. Vaughan</span>
+        </li>
+        <li class="book" data-rating="5" data-isbn="1632150778"><a class="highlight" href="https://www.goodreads.com/book/show/23093367-saga-vol-4">Saga, Vol. 4</a>
+          <span class="by">by</span>
+          <span class="author">Brian K. Vaughan</span>
+        </li>
+        <li class="book" data-rating="5" data-isbn="1607069318"><a class="highlight" href="https://www.goodreads.com/book/show/19358975-saga-vol-3">Saga, Vol. 3</a>
+          <span class="by">by</span>
+          <span class="author">Brian K. Vaughan</span>
+        </li>
+        <li class="book" data-rating="5" data-isbn="1607066920"><a class="highlight" href="https://www.goodreads.com/book/show/17131869-saga-vol-2">Saga, Vol. 2</a>
+          <span class="by">by</span>
+          <span class="author">Brian K. Vaughan</span>
+        </li>
+        <li class="book" data-rating="0"><a class="highlight" href="https://www.goodreads.com/book/show/37823396-black-panther">Black Panther: Long Live the King #4</a>
+          <span class="by">by</span>
+          <span class="author">Aaron Covington</span>
+        </li>
+        <li class="book" data-rating="0"><a class="highlight" href="https://www.goodreads.com/book/show/37782144-black-panther">Black Panther: Long Live the King #3</a>
+          <span class="by">by</span>
+          <span class="author">Aaron Covington</span>
+        </li>
+        <li class="book" data-rating="0"><a class="highlight" href="https://www.goodreads.com/book/show/37715471-black-panther">Black Panther: Long Live the King #2</a>
+          <span class="by">by</span>
+          <span class="author">Nnedi Okorafor</span>
+        </li>
+        <li class="book" data-rating="0"><a class="highlight" href="https://www.goodreads.com/book/show/36374855-black-panther">Black Panther: Long Live the King #1</a>
+          <span class="by">by</span>
+          <span class="author">Nnedi Okorafor</span>
+        </li>
+        <li class="book" data-rating="0" data-isbn="1606908855"><a class="highlight" href="https://www.goodreads.com/book/show/28862254-white-sand-volume-1">White Sand, Volume 1</a>
+          <span class="by">by</span>
+          <span class="author">Brandon Sanderson</span>
+        </li>
+        <li class="book" data-rating="5" data-isbn="0141014083"><a class="highlight" href="https://www.goodreads.com/book/show/15195.The_Complete_Maus">The Complete Maus</a>
+          <span class="by">by</span>
+          <span class="author">Art Spiegelman</span>
+        </li>
+        <li class="book" data-rating="2"><a class="highlight" href="https://www.goodreads.com/book/show/18656030-cibola-burn">Cibola Burn</a>
+          <span class="by">by</span>
+          <span class="author">James S.A. Corey</span>
+        </li>
+        <li class="book" data-rating="3" data-isbn="1482590956"><a class="highlight" href="https://www.goodreads.com/book/show/17554595-senlin-ascends">Senlin Ascends</a>
+          <span class="by">by</span>
+          <span class="author">Josiah Bancroft</span>
+        </li>
+        <li class="book" data-rating="4"><a class="highlight" href="https://www.goodreads.com/book/show/25353286-provenance">Provenance</a>
+          <span class="by">by</span>
+          <span class="author">Ann Leckie</span>
+        </li>
+        <li class="book" data-rating="0" data-isbn="1408845644"><a class="highlight" href="https://www.goodreads.com/book/show/24548235-harry-potter-and-the-philosopher-s-stone">Harry Potter and the Philosopher's Stone</a>
+          <span class="by">by</span>
+          <span class="author">J.K. Rowling</span>
+        </li>
+        <li class="book" data-rating="5" data-isbn="1607066017"><a class="highlight" href="https://www.goodreads.com/book/show/15704307-saga-vol-1">Saga, Vol. 1</a>
+          <span class="by">by</span>
+          <span class="author">Brian K. Vaughan</span>
+        </li>
+      </ul>
+      <h2>2017</h2>
+      <ul>
+        <li class="book" data-rating="4" data-isbn="1302903055"><a class="highlight" href="https://www.goodreads.com/book/show/33286891-ms-marvel-vol-7">Ms. Marvel, Vol. 7: Damage Per Second</a>
+          <span class="by">by</span>
+          <span class="author">G. Willow Wilson</span>
+        </li>
+        <li class="book" data-rating="5" data-isbn="0785196129"><a class="highlight" href="https://www.goodreads.com/book/show/29775583-ms-marvel-vol-6">Ms. Marvel, Vol. 6: Civil War II</a>
+          <span class="by">by</span>
+          <span class="author">G. Willow Wilson</span>
+        </li>
+        <li class="book" data-rating="0" data-isbn="0785197362"><a class="highlight" href="https://www.goodreads.com/book/show/25066780-ms-marvel-vol-4">Ms. Marvel, Vol. 4: Last Days</a>
+          <span class="by">by</span>
+          <span class="author">G. Willow Wilson</span>
+        </li>
+        <li class="book" data-rating="5" data-isbn="0785196110"><a class="highlight" href="https://www.goodreads.com/book/show/27163013-ms-marvel-vol-5">Ms. Marvel, Vol. 5: Super Famous</a>
+          <span class="by">by</span>
+          <span class="author">G. Willow Wilson</span>
+        </li>
+        <li class="book" data-rating="0" data-isbn="0785192271"><a class="highlight" href="https://www.goodreads.com/book/show/23546843-ms-marvel-vol-3">Ms. Marvel, Vol. 3: Crushed</a>
+          <span class="by">by</span>
+          <span class="author">G. Willow Wilson</span>
+        </li>
+        <li class="book" data-rating="0" data-isbn="0785190228"><a class="highlight" href="https://www.goodreads.com/book/show/23017947-ms-marvel-vol-2">Ms. Marvel, Vol. 2: Generation Why</a>
+          <span class="by">by</span>
+          <span class="author">G. Willow Wilson</span>
+        </li>
+        <li class="book" data-rating="5"><a class="highlight" href="https://www.goodreads.com/book/show/20898019-ms-marvel-vol-1">Ms. Marvel, Vol. 1: No Normal</a>
+          <span class="by">by</span>
+          <span class="author">G. Willow Wilson</span>
+        </li>
+        <li class="book" data-rating="0" data-isbn="0316129070"><a class="highlight" href="https://www.goodreads.com/book/show/16131032-abaddon-s-gate">Abaddon's Gate</a>
+          <span class="by">by</span>
+          <span class="author">James S.A. Corey</span>
+        </li>
+        <li class="book" data-rating="4"><a class="highlight" href="https://www.goodreads.com/book/show/33571713-a-column-of-fire">A Column of Fire</a>
+          <span class="by">by</span>
+          <span class="author">Ken Follett</span>
+        </li>
+        <li class="book" data-rating="4" data-isbn="0765333120"><a class="highlight" href="https://www.goodreads.com/book/show/16059411-two-serpents-rise">Two Serpents Rise</a>
+          <span class="by">by</span>
+          <span class="author">Max Gladstone</span>
+        </li>
+        <li class="book" data-rating="5" data-isbn="1841499900"><a class="highlight" href="https://www.goodreads.com/book/show/12591698-caliban-s-war">Caliban's War</a>
+          <span class="by">by</span>
+          <span class="author">James S.A. Corey</span>
+        </li>
+        <li class="book" data-rating="5"><a class="highlight" href="https://www.goodreads.com/book/show/18715259-ender-s-game-alive">Ender's Game Alive: The Full Cast Audioplay</a>
+          <span class="by">by</span>
+          <span class="author">Orson Scott Card</span>
+        </li>
+        <li class="book" data-rating="3"><a class="highlight" href="https://www.goodreads.com/book/show/35073402-magic-muggle">Magic Muggle: Book 2</a>
+          <span class="by">by</span>
+          <span class="author">Doomchicken7</span>
+        </li>
+        <li class="book" data-rating="3"><a class="highlight" href="https://www.goodreads.com/book/show/35066531-magic-muggle">Magic Muggle: Book 1</a>
+          <span class="by">by</span>
+          <span class="author">Doomchicken7</span>
+        </li>
+        <li class="book" data-rating="5" data-isbn="1401230431"><a class="highlight" href="https://www.goodreads.com/book/show/8941959-a-game-of-you">A Game of You</a>
+          <span class="by">by</span>
+          <span class="author">Neil Gaiman</span>
+        </li>
+        <li class="book" data-rating="4"><a class="highlight" href="https://www.goodreads.com/book/show/31176804-snapshot">Snapshot</a>
+          <span class="by">by</span>
+          <span class="author">Brandon Sanderson</span>
+        </li>
+        <li class="book" data-rating="5" data-isbn="0857682342"><a class="highlight" href="https://www.goodreads.com/book/show/9918498-season-of-mists">Season of Mists</a>
+          <span class="by">by</span>
+          <span class="author">Neil Gaiman</span>
+        </li>
+        <li class="book" data-rating="4" data-isbn="1401229352"><a class="highlight" href="https://www.goodreads.com/book/show/8177203-dream-country">Dream Country</a>
+          <span class="by">by</span>
+          <span class="author">Neil Gaiman</span>
+        </li>
+        <li class="book" data-rating="1"><a class="highlight" href="https://www.goodreads.com/book/show/30039245-zero-g">Zero 'g': Earth Without Gravity</a>
+          <span class="by">by</span>
+          <span class="author">Srujan Joshi</span>
+        </li>
+        <li class="book" data-rating="4" data-isbn="0765333104"><a class="highlight" href="https://www.goodreads.com/book/show/13539191-three-parts-dead">Three Parts Dead</a>
+          <span class="by">by</span>
+          <span class="author">Max Gladstone</span>
+        </li>
+        <li class="book" data-rating="5" data-isbn="1401227996"><a class="highlight" href="https://www.goodreads.com/book/show/7247463-the-doll-s-house">The Doll's House</a>
+          <span class="by">by</span>
+          <span class="author">Neil Gaiman</span>
+        </li>
+        <li class="book" data-rating="4"><a class="highlight" href="https://www.goodreads.com/book/show/27826366-in-the-field-marshal-s-shadow">In the Field Marshal's Shadow</a>
+          <span class="by">by</span>
+          <span class="author">Brian  McClellan</span>
+        </li>
+        <li class="book" data-rating="5" data-isbn="2954706228"><a class="highlight" href="https://www.goodreads.com/book/show/33643569-rise-of-the-coders">Rise of The Coders</a>
+          <span class="by">by</span>
+          <span class="author">Issartial</span>
+        </li>
+        <li class="book" data-rating="3" data-isbn="0446676977"><a class="highlight" href="https://www.goodreads.com/book/show/52318.Wild_Seed">Wild Seed</a>
+          <span class="by">by</span>
+          <span class="author">Octavia E. Butler</span>
+        </li>
+        <li class="book" data-rating="0"><a class="highlight" href="https://www.goodreads.com/book/show/23597688-murder-at-the-kinnen-hotel">Murder at the Kinnen Hotel</a>
+          <span class="by">by</span>
+          <span class="author">Brian  McClellan</span>
+        </li>
+        <li class="book" data-rating="0"><a class="highlight" href="https://www.goodreads.com/book/show/23654163-return-to-honor">Return to Honor</a>
+          <span class="by">by</span>
+          <span class="author">Brian  McClellan</span>
+        </li>
+        <li class="book" data-rating="0"><a class="highlight" href="https://www.goodreads.com/book/show/22493195-servant-of-the-crown">Servant of the Crown</a>
+          <span class="by">by</span>
+          <span class="author">Brian  McClellan</span>
+        </li>
+        <li class="book" data-rating="0"><a class="highlight" href="https://www.goodreads.com/book/show/18569078-hope-s-end">Hope's End</a>
+          <span class="by">by</span>
+          <span class="author">Brian  McClellan</span>
+        </li>
+        <li class="book" data-rating="5" data-isbn="0316407216"><a class="highlight" href="https://www.goodreads.com/book/show/28811016-sins-of-empire">Sins of Empire</a>
+          <span class="by">by</span>
+          <span class="author">Brian  McClellan</span>
+        </li>
+        <li class="book" data-rating="0"><a class="highlight" href="https://www.goodreads.com/book/show/18139131-the-girl-of-hrusch-avenue">The Girl of Hrusch Avenue</a>
+          <span class="by">by</span>
+          <span class="author">Brian  McClellan</span>
+        </li>
+        <li class="book" data-rating="0"><a class="highlight" href="https://www.goodreads.com/book/show/20653339-the-face-in-the-window">The Face in the Window</a>
+          <span class="by">by</span>
+          <span class="author">Brian  McClellan</span>
+        </li>
+        <li class="book" data-rating="0"><a class="highlight" href="https://www.goodreads.com/book/show/20614529-forsworn">Forsworn</a>
+          <span class="by">by</span>
+          <span class="author">Brian  McClellan</span>
+        </li>
+        <li class="book" data-rating="4" data-isbn="0330426648"><a class="highlight" href="https://www.goodreads.com/book/show/223380.Stories_of_Your_Life_and_Others">Stories of Your Life and Others</a>
+          <span class="by">by</span>
+          <span class="author">Ted Chiang</span>
+        </li>
+        <li class="book" data-rating="4"><a class="highlight" href="https://www.goodreads.com/book/show/30197814-home">Home</a>
+          <span class="by">by</span>
+          <span class="author">Nnedi Okorafor</span>
+        </li>
+        <li class="book" data-rating="5"><a class="highlight" href="https://www.goodreads.com/book/show/23198201-sapiens">Sapiens: A Brief History of Humankind</a>
+          <span class="by">by</span>
+          <span class="author">Yuval Noah Harari</span>
+        </li>
+        <li class="book" data-rating="4"><a class="highlight" href="https://www.goodreads.com/book/show/20829994-percy-jackson-s-greek-gods">Percy Jackson's Greek Gods</a>
+          <span class="by">by</span>
+          <span class="author">Rick Riordan</span>
+        </li>
+        <li class="book" data-rating="0" data-isbn="1841499889"><a class="highlight" href="https://www.goodreads.com/book/show/8855321-leviathan-wakes">Leviathan Wakes</a>
+          <span class="by">by</span>
+          <span class="author">James S.A. Corey</span>
+        </li>
+        <li class="book" data-rating="5"><a class="highlight" href="https://www.goodreads.com/book/show/10016013-harry-potter-and-the-methods-of-rationality">Harry Potter and the Methods of Rationality</a>
+          <span class="by">by</span>
+          <span class="author">Eliezer Yudkowsky</span>
+        </li>
+      </ul>
+      <h2>2016</h2>
+      <ul>
+        <li class="book" data-rating="5" data-isbn="0316219126"><a class="highlight" href="https://www.goodreads.com/book/show/20883847-the-autumn-republic">The Autumn Republic</a>
+          <span class="by">by</span>
+          <span class="author">Brian  McClellan</span>
+        </li>
+        <li class="book" data-rating="4" data-isbn="0356502023"><a class="highlight" href="https://www.goodreads.com/book/show/17608111-the-crimson-campaign">The Crimson Campaign</a>
+          <span class="by">by</span>
+          <span class="author">Brian  McClellan</span>
+        </li>
+        <li class="book" data-rating="4" data-isbn="0765381400"><a class="highlight" href="https://www.goodreads.com/book/show/26114421-the-dark-talent">The Dark Talent</a>
+          <span class="by">by</span>
+          <span class="author">Brandon Sanderson</span>
+        </li>
+        <li class="book" data-rating="4"><a class="highlight" href="https://www.goodreads.com/book/show/18298471-the-little-mermaid">The Little Mermaid</a>
+          <span class="by">by</span>
+          <span class="author">Hans Christian Andersen</span>
+        </li>
+        <li class="book" data-rating="0"><a class="highlight" href="https://www.goodreads.com/book/show/26888125-fcbd-2015-6">FCBD 2015 #6</a>
+          <span class="by">by</span>
+          <span class="author">Gene Luen Yang</span>
+        </li>
+        <li class="book" data-rating="4" data-isbn="0316219037"><a class="highlight" href="https://www.goodreads.com/book/show/15790883-promise-of-blood">Promise of Blood</a>
+          <span class="by">by</span>
+          <span class="author">Brian  McClellan</span>
+        </li>
+        <li class="book" data-rating="4"><a class="highlight" href="https://www.goodreads.com/book/show/7604.Lolita">Lolita</a>
+          <span class="by">by</span>
+          <span class="author">Vladimir Nabokov</span>
+        </li>
+        <li class="book" data-rating="3"><a class="highlight" href="https://www.goodreads.com/book/show/29449386-the-blood-mirror">The Blood Mirror</a>
+          <span class="by">by</span>
+          <span class="author">Brent Weeks</span>
+        </li>
+        <li class="book" data-rating="5" data-isbn="0765384469"><a class="highlight" href="https://www.goodreads.com/book/show/25667918-binti">Binti</a>
+          <span class="by">by</span>
+          <span class="author">Nnedi Okorafor</span>
+        </li>
+        <li class="book" data-rating="3"><a class="highlight" href="https://www.goodreads.com/book/show/26228034-the-obelisk-gate">The Obelisk Gate</a>
+          <span class="by">by</span>
+          <span class="author">N.K. Jemisin</span>
+        </li>
+        <li class="book" data-rating="4"><a class="highlight" href="https://www.goodreads.com/book/show/19161852-the-fifth-season">The Fifth Season</a>
+          <span class="by">by</span>
+          <span class="author">N.K. Jemisin</span>
+        </li>
+        <li class="book" data-rating="5" data-isbn="0751565350"><a class="highlight" href="https://www.goodreads.com/book/show/29056083-harry-potter-and-the-cursed-child">Harry Potter and the Cursed Child: Parts One and Two</a>
+          <span class="by">by</span>
+          <span class="author">John Tiffany</span>
+        </li>
+        <li class="book" data-rating="4"><a class="highlight" href="https://www.goodreads.com/book/show/4605017-bad-science">Bad Science</a>
+          <span class="by">by</span>
+          <span class="author">Ben Goldacre</span>
+        </li>
+        <li class="book" data-rating="4"><a class="highlight" href="https://www.goodreads.com/book/show/26878587-scott-pilgrim-free-comic-book-day-story">Scott Pilgrim Free Comic Book Day Story</a>
+          <span class="by">by</span>
+          <span class="author">Bryan Lee O'Malley</span>
+        </li>
+        <li class="book" data-rating="0" data-isbn="0007203330"><a class="highlight" href="https://www.goodreads.com/book/show/1201589.The_Last_Testament">The Last Testament</a>
+          <span class="by">by</span>
+          <span class="author">Sam Bourne</span>
+        </li>
+        <li class="book" data-rating="4" data-isbn="0062312561"><a class="highlight" href="https://www.goodreads.com/book/show/20452208-the-graveyard-book-volume-2">The Graveyard Book, Volume 2</a>
+          <span class="by">by</span>
+          <span class="author">Neil Gaiman</span>
+        </li>
+        <li class="book" data-rating="4" data-isbn="1408858991"><a class="highlight" href="https://www.goodreads.com/book/show/22756095-the-graveyard-book">The Graveyard Book: Volume 1</a>
+          <span class="by">by</span>
+          <span class="author">Neil Gaiman</span>
+        </li>
+        <li class="book" data-rating="5" data-isbn="1401225756"><a class="highlight" href="https://www.goodreads.com/book/show/6657541-preludes-nocturnes">Preludes &amp; Nocturnes</a>
+          <span class="by">by</span>
+          <span class="author">Neil Gaiman</span>
+        </li>
+        <li class="book" data-rating="3" data-isbn="9381626391"><a class="highlight" href="https://www.goodreads.com/book/show/13568472-stupid-guy-goes-to-india">Stupid Guy Goes To India</a>
+          <span class="by">by</span>
+          <span class="author">Yukichi Yamamatsu</span>
+        </li>
+        <li class="book" data-rating="3" data-isbn="8129121093"><a class="highlight" href="https://www.goodreads.com/book/show/17899164-tik-tik-the-master-of-time">Tik-Tik, The Master of Time</a>
+          <span class="by">by</span>
+          <span class="author">Musharraf Ali Farooqi</span>
+        </li>
+        <li class="book" data-rating="5" data-isbn="0553418602"><a class="highlight" href="https://www.goodreads.com/book/show/23363928-the-library-at-mount-char">The Library at Mount Char</a>
+          <span class="by">by</span>
+          <span class="author">Scott  Hawkins</span>
+        </li>
+        <li class="book" data-rating="5" data-isbn="0553418629"><a class="highlight" href="https://www.goodreads.com/book/show/26892110-the-library-at-mount-char">The Library at Mount Char</a>
+          <span class="by">by</span>
+          <span class="author">Scott  Hawkins</span>
+        </li>
+        <li class="book" data-rating="4" data-isbn="1935179624"><a class="highlight" href="https://www.goodreads.com/book/show/20718289-hansel-and-gretel">Hansel and Gretel</a>
+          <span class="by">by</span>
+          <span class="author">Neil Gaiman</span>
+        </li>
+        <li class="book" data-rating="5"><a class="highlight" href="https://www.goodreads.com/book/show/25400395-ancillary-mercy">Ancillary Mercy</a>
+          <span class="by">by</span>
+          <span class="author">Ann Leckie</span>
+        </li>
+        <li class="book" data-rating="4" data-isbn="0062224077"><a class="highlight" href="https://www.goodreads.com/book/show/17349203-fortunately-the-milk">Fortunately, the Milk</a>
+          <span class="by">by</span>
+          <span class="author">Neil Gaiman</span>
+        </li>
+        <li class="book" data-rating="4" data-isbn="1770461175"><a class="highlight" href="https://www.goodreads.com/book/show/16059658-a-user-s-guide-to-neglectful-parenting">A User's Guide to Neglectful Parenting</a>
+          <span class="by">by</span>
+          <span class="author">Guy Delisle</span>
+        </li>
+        <li class="book" data-rating="4" data-isbn="0385743602"><a class="highlight" href="https://www.goodreads.com/book/show/15704486-calamity">Calamity</a>
+          <span class="by">by</span>
+          <span class="author">Brandon Sanderson</span>
+        </li>
+        <li class="book" data-rating="4" data-isbn="0375714839"><a class="highlight" href="https://www.goodreads.com/book/show/991197.The_Complete_Persepolis">The Complete Persepolis</a>
+          <span class="by">by</span>
+          <span class="author">Marjane Satrapi</span>
+        </li>
+        <li class="book" data-rating="4"><a class="highlight" href="https://www.goodreads.com/book/show/157993.The_Little_Prince">The Little Prince</a>
+          <span class="by">by</span>
+          <span class="author">Antoine de Saint-Exupéry</span>
+        </li>
+        <li class="book" data-rating="5"><a class="highlight" href="https://www.goodreads.com/book/show/18739426-the-bands-of-mourning">The Bands of Mourning</a>
+          <span class="by">by</span>
+          <span class="author">Brandon Sanderson</span>
+        </li>
+        <li class="book" data-rating="5"><a class="highlight" href="https://www.goodreads.com/book/show/28698036-secret-history">Secret History</a>
+          <span class="by">by</span>
+          <span class="author">Brandon Sanderson</span>
+        </li>
+        <li class="book" data-rating="0" data-isbn="0763631205"><a class="highlight" href="https://www.goodreads.com/book/show/5327.A_Christmas_Carol">A Christmas Carol</a>
+          <span class="by">by</span>
+          <span class="author">Charles Dickens</span>
+        </li>
+        <li class="book" data-rating="0" data-isbn="0140390693"><a class="highlight" href="https://www.goodreads.com/book/show/341288.Little_Women">Little Women</a>
+          <span class="by">by</span>
+          <span class="author">Louisa May Alcott</span>
+        </li>
+        <li class="book" data-rating="0"><a class="highlight" href="https://www.goodreads.com/book/show/11753829-they-re-made-out-of-meat">They're Made Out of Meat</a>
+          <span class="by">by</span>
+          <span class="author">Terry Bisson</span>
+        </li>
+        <li class="book" data-rating="5" data-isbn="1401248969"><a class="highlight" href="https://www.goodreads.com/book/show/18310944-the-sandman">The Sandman: Overture</a>
+          <span class="by">by</span>
+          <span class="author">Neil Gaiman</span>
+        </li>
+        <li class="book" data-rating="4" data-isbn="0575082453"><a class="highlight" href="https://www.goodreads.com/book/show/2315892.Best_Served_Cold">Best Served Cold</a>
+          <span class="by">by</span>
+          <span class="author">Joe Abercrombie</span>
+        </li>
+        <li class="book" data-rating="4" data-isbn="1451696191"><a class="highlight" href="https://www.goodreads.com/book/show/13573503-the-perks-of-being-a-wallflower">The Perks of Being a Wallflower</a>
+          <span class="by">by</span>
+          <span class="author">Stephen Chbosky</span>
+        </li>
+        <li class="book" data-rating="0" data-isbn="0385480016"><a class="highlight" href="https://www.goodreads.com/book/show/12543.Bird_by_Bird">Bird by Bird: Some Instructions on Writing and Life</a>
+          <span class="by">by</span>
+          <span class="author">Anne Lamott</span>
+        </li>
+        <li class="book" data-rating="0" data-isbn="0930289234"><a class="highlight" href="https://www.goodreads.com/book/show/472331.Watchmen">Watchmen</a>
+          <span class="by">by</span>
+          <span class="author">Alan Moore</span>
+        </li>
+        <li class="book" data-rating="4"><a class="highlight" href="https://www.goodreads.com/book/show/9969571-ready-player-one">Ready Player One</a>
+          <span class="by">by</span>
+          <span class="author">Ernest Cline</span>
+        </li>
+        <li class="book" data-rating="2"><a class="highlight" href="https://www.goodreads.com/book/show/12652457-the-broken-eye">The Broken Eye</a>
+          <span class="by">by</span>
+          <span class="author">Brent Weeks</span>
+        </li>
+      </ul>
+      <h2>2015</h2>
+      <ul>
+        <li class="book" data-rating="4"><a class="highlight" href="https://www.goodreads.com/book/show/17936499-how-to-talk-to-girls-at-parties">How to Talk to Girls at Parties</a>
+          <span class="by">by</span>
+          <span class="author">Neil Gaiman</span>
+        </li>
+        <li class="book" data-rating="4" data-isbn="0765377063"><a class="highlight" href="https://www.goodreads.com/book/show/20518872-the-three-body-problem">The Three-Body Problem</a>
+          <span class="by">by</span>
+          <span class="author">Liu Cixin</span>
+        </li>
+        <li class="book" data-rating="5"><a class="highlight" href="https://www.goodreads.com/book/show/45199076-the-goblin-emperor">The Goblin Emperor</a>
+          <span class="by">by</span>
+          <span class="author">Katherine Addison</span>
+        </li>
+        <li class="book" data-rating="0"><a class="highlight" href="https://www.goodreads.com/book/show/17375315-treasure-island">Treasure Island</a>
+          <span class="by">by</span>
+          <span class="author">Robert Louis Stevenson</span>
+        </li>
+        <li class="book" data-rating="3" data-isbn="0553565699"><a class="highlight" href="https://www.goodreads.com/book/show/45112.Assassin_s_Quest">Assassin's Quest</a>
+          <span class="by">by</span>
+          <span class="author">Robin Hobb</span>
+        </li>
+        <li class="book" data-rating="5" data-isbn="0006480101"><a class="highlight" href="https://www.goodreads.com/book/show/68487.Royal_Assassin">Royal Assassin</a>
+          <span class="by">by</span>
+          <span class="author">Robin Hobb</span>
+        </li>
+        <li class="book" data-rating="4" data-isbn="0451151259"><a class="highlight" href="https://www.goodreads.com/book/show/848162.The_Eyes_of_the_Dragon">The Eyes of the Dragon</a>
+          <span class="by">by</span>
+          <span class="author">Stephen King</span>
+        </li>
+        <li class="book" data-rating="3"><a class="highlight" href="https://www.goodreads.com/book/show/22816087-seveneves">Seveneves</a>
+          <span class="by">by</span>
+          <span class="author">Neal Stephenson</span>
+        </li>
+        <li class="book" data-rating="4"><a class="highlight" href="https://www.goodreads.com/book/show/13073554-lauren-ipsum">Lauren Ipsum</a>
+          <span class="by">by</span>
+          <span class="author">Carlos Bueno</span>
+        </li>
+        <li class="book" data-rating="3" data-isbn="0062190415"><a class="highlight" href="https://www.goodreads.com/book/show/22752699-seveneves">Seveneves</a>
+          <span class="by">by</span>
+          <span class="author">Neal Stephenson</span>
+        </li>
+        <li class="book" data-rating="4" data-isbn="1939578094"><a class="highlight" href="https://www.goodreads.com/book/show/17937621-a-manual-for-creating-atheists">A Manual for Creating Atheists</a>
+          <span class="by">by</span>
+          <span class="author">Peter Boghossian</span>
+        </li>
+        <li class="book" data-rating="0" data-isbn="0345418263"><a class="highlight" href="https://www.goodreads.com/book/show/21787.The_Princess_Bride">The Princess Bride</a>
+          <span class="by">by</span>
+          <span class="author">William Goldman</span>
+        </li>
+        <li class="book" data-rating="4"><a class="highlight" href="https://www.goodreads.com/book/show/25188109-perfect-state">Perfect State</a>
+          <span class="by">by</span>
+          <span class="author">Brandon Sanderson</span>
+        </li>
+        <li class="book" data-rating="5" data-isbn="0060733497"><a class="highlight" href="https://www.goodreads.com/book/show/104101.The_Lions_of_Al_Rassan">The Lions of Al-Rassan</a>
+          <span class="by">by</span>
+          <span class="author">Guy Gavriel Kay</span>
+        </li>
+        <li class="book" data-rating="4"><a class="highlight" href="https://www.goodreads.com/book/show/18250823-don-t-buy-this-book-now">Don't Buy This Book Now!</a>
+          <span class="by">by</span>
+          <span class="author">John R. Perry</span>
+        </li>
+        <li class="book" data-rating="3"><a class="highlight" href="https://www.goodreads.com/book/show/25753564-ant-man-1">Ant-Man #1</a>
+          <span class="by">by</span>
+          <span class="author">Nick Spencer</span>
+        </li>
+        <li class="book" data-rating="5"><a class="highlight" href="https://www.goodreads.com/book/show/18160608-superman">Superman: Red Son #3</a>
+          <span class="by">by</span>
+          <span class="author">Mark Millar</span>
+        </li>
+        <li class="book" data-rating="0"><a class="highlight" href="https://www.goodreads.com/book/show/5197797-superman">Superman: Red Son #2</a>
+          <span class="by">by</span>
+          <span class="author">Mark Millar</span>
+        </li>
+        <li class="book" data-rating="5"><a class="highlight" href="https://www.goodreads.com/book/show/5653437-superman">Superman: Red Son #1</a>
+          <span class="by">by</span>
+          <span class="author">Mark Millar</span>
+        </li>
+        <li class="book" data-rating="4" data-isbn="1616552972"><a class="highlight" href="https://www.goodreads.com/book/show/21532198-avatar">Avatar: The Last Airbender: The Rift, Part 3</a>
+          <span class="by">by</span>
+          <span class="author">Gene Luen Yang</span>
+        </li>
+        <li class="book" data-rating="4" data-isbn="1616552964"><a class="highlight" href="https://www.goodreads.com/book/show/20176447-avatar">Avatar: The Last Airbender - The Rift, Part 2</a>
+          <span class="by">by</span>
+          <span class="author">Gene Luen Yang</span>
+        </li>
+        <li class="book" data-rating="3" data-isbn="1616552956"><a class="highlight" href="https://www.goodreads.com/book/show/18687079-avatar">Avatar: The Last Airbender - The Rift, Part 1</a>
+          <span class="by">by</span>
+          <span class="author">Gene Luen Yang</span>
+        </li>
+        <li class="book" data-rating="5"><a class="highlight" href="https://www.goodreads.com/book/show/618177.Legend">Legend</a>
+          <span class="by">by</span>
+          <span class="author">David Gemmell</span>
+        </li>
+        <li class="book" data-rating="5" data-isbn="0804139024"><a class="highlight" href="https://www.goodreads.com/book/show/18007564-the-martian">The Martian</a>
+          <span class="by">by</span>
+          <span class="author">Andy Weir</span>
+        </li>
+        <li class="book" data-rating="4"><a class="highlight" href="https://www.goodreads.com/book/show/8868764-white-sand">White Sand</a>
+          <span class="by">by</span>
+          <span class="author">Brandon Sanderson</span>
+        </li>
+        <li class="book" data-rating="5" data-isbn="0385743580"><a class="highlight" href="https://www.goodreads.com/book/show/15704459-firefight">Firefight</a>
+          <span class="by">by</span>
+          <span class="author">Brandon Sanderson</span>
+        </li>
+        <li class="book" data-rating="4" data-isbn="0451457765"><a class="highlight" href="https://www.goodreads.com/book/show/104089.Tigana">Tigana</a>
+          <span class="by">by</span>
+          <span class="author">Guy Gavriel Kay</span>
+        </li>
+        <li class="book" data-rating="3" data-isbn="1857231589"><a class="highlight" href="https://www.goodreads.com/book/show/112537.Rendezvous_with_Rama">Rendezvous with Rama</a>
+          <span class="by">by</span>
+          <span class="author">Arthur C. Clarke</span>
+        </li>
+        <li class="book" data-rating="5" data-isbn="0765378558"><a class="highlight" href="https://www.goodreads.com/book/show/16065004-shadows-of-self">Shadows of Self</a>
+          <span class="by">by</span>
+          <span class="author">Brandon Sanderson</span>
+        </li>
+        <li class="book" data-rating="5"><a class="highlight" href="https://www.goodreads.com/book/show/23200621-assassin-s-apprentice">Assassin's Apprentice</a>
+          <span class="by">by</span>
+          <span class="author">Robin Hobb</span>
+        </li>
+      </ul>
+      <h2>2014</h2>
+      <ul>
+        <li class="book" data-rating="5" data-isbn="1401210074"><a class="highlight" href="https://www.goodreads.com/book/show/14498.Neil_Gaiman_s_Neverwhere">Neil Gaiman's Neverwhere</a>
+          <span class="by">by</span>
+          <span class="author">Mike Carey</span>
+        </li>
+        <li class="book" data-rating="4" data-isbn="0786849576"><a class="highlight" href="https://www.goodreads.com/book/show/831893.Half_Moon_Investigations">Half-Moon Investigations</a>
+          <span class="by">by</span>
+          <span class="author">Eoin Colfer</span>
+        </li>
+        <li class="book" data-rating="4" data-isbn="0385523386"><a class="highlight" href="https://www.goodreads.com/book/show/6314763-orange-is-the-new-black">Orange Is the New Black</a>
+          <span class="by">by</span>
+          <span class="author">Piper Kerman</span>
+        </li>
+        <li class="book" data-rating="3"><a class="highlight" href="https://www.goodreads.com/book/show/23397921-sixth-of-the-dusk">Sixth of the Dusk</a>
+          <span class="by">by</span>
+          <span class="author">Brandon Sanderson</span>
+        </li>
+        <li class="book" data-rating="5"><a class="highlight" href="https://www.goodreads.com/book/show/20886354-skin-deep">Skin Deep</a>
+          <span class="by">by</span>
+          <span class="author">Brandon Sanderson</span>
+        </li>
+        <li class="book" data-rating="5" data-isbn="0316246654"><a class="highlight" href="https://www.goodreads.com/book/show/20706284-ancillary-sword">Ancillary Sword</a>
+          <span class="by">by</span>
+          <span class="author">Ann Leckie</span>
+        </li>
+        <li class="book" data-rating="4" data-isbn="0140439072"><a class="highlight" href="https://www.goodreads.com/book/show/608474.The_Sign_of_Four">The Sign of Four</a>
+          <span class="by">by</span>
+          <span class="author">Arthur Conan Doyle</span>
+        </li>
+        <li class="book" data-rating="4"><a class="highlight" href="https://www.goodreads.com/book/show/10450750-avatar">Avatar: The Last Airbender: The Lost Adventures</a>
+          <span class="by">by</span>
+          <span class="author">Bryan Konietzko</span>
+        </li>
+        <li class="book" data-rating="4" data-isbn="1466838116"><a class="highlight" href="https://www.goodreads.com/book/show/17206699-the-water-that-falls-on-you-from-nowhere">The Water That Falls on You from Nowhere</a>
+          <span class="by">by</span>
+          <span class="author">John Chu</span>
+        </li>
+        <li class="book" data-rating="5"><a class="highlight" href="https://www.goodreads.com/book/show/17333324-ancillary-justice">Ancillary Justice</a>
+          <span class="by">by</span>
+          <span class="author">Ann Leckie</span>
+        </li>
+        <li class="book" data-rating="5" data-isbn="1466873825"><a class="highlight" href="https://www.goodreads.com/book/show/22154436-the-lady-astronaut-of-mars">The Lady Astronaut of Mars</a>
+          <span class="by">by</span>
+          <span class="author">Mary Robinette Kowal</span>
+        </li>
+        <li class="book" data-rating="3" data-isbn="0752858491"><a class="highlight" href="https://www.goodreads.com/book/show/31259.The_Bourne_Ultimatum">The Bourne Ultimatum</a>
+          <span class="by">by</span>
+          <span class="author">Robert Ludlum</span>
+        </li>
+        <li class="book" data-rating="4" data-isbn="1932664084"><a class="highlight" href="https://www.goodreads.com/book/show/29800.Scott_Pilgrim_Volume_1">Scott Pilgrim, Volume 1: Scott Pilgrim's Precious Little Life</a>
+          <span class="by">by</span>
+          <span class="author">Bryan Lee O'Malley</span>
+        </li>
+        <li class="book" data-rating="5" data-isbn="1400032717"><a class="highlight" href="https://www.goodreads.com/book/show/1618.The_Curious_Incident_of_the_Dog_in_the_Night_Time">The Curious Incident of the Dog in the Night-Time</a>
+          <span class="by">by</span>
+          <span class="author">Mark Haddon</span>
+        </li>
+        <li class="book" data-rating="2"><a class="highlight" href="https://www.goodreads.com/book/show/11316396-divergent">Divergent</a>
+          <span class="by">by</span>
+          <span class="author">Veronica Roth</span>
+        </li>
+        <li class="book" data-rating="4"><a class="highlight" href="https://www.goodreads.com/book/show/21844946-shadows-beneath">Shadows Beneath: The Writing Excuses Anthology</a>
+          <span class="by">by</span>
+          <span class="author">Brandon Sanderson</span>
+        </li>
+        <li class="book" data-rating="3" data-isbn="0345484266"><a class="highlight" href="https://www.goodreads.com/book/show/61975.Dragonflight">Dragonflight</a>
+          <span class="by">by</span>
+          <span class="author">Anne McCaffrey</span>
+        </li>
+        <li class="book" data-rating="5" data-isbn="1421527618"><a class="highlight" href="https://www.goodreads.com/book/show/6255949-all-you-need-is-kill">All You Need Is Kill</a>
+          <span class="by">by</span>
+          <span class="author">Hiroshi Sakurazaka</span>
+        </li>
+        <li class="book" data-rating="0"><a class="highlight" href="https://www.goodreads.com/book/show/5058.On_Wings_of_Eagles">On Wings of Eagles</a>
+          <span class="by">by</span>
+          <span class="author">Ken Follett</span>
+        </li>
+        <li class="book" data-rating="0" data-isbn="0451215710"><a class="highlight" href="https://www.goodreads.com/book/show/92367.Whiteout">Whiteout</a>
+          <span class="by">by</span>
+          <span class="author">Ken Follett</span>
+        </li>
+        <li class="book" data-rating="0" data-isbn="1938570006"><a class="highlight" href="https://www.goodreads.com/book/show/17699268-firstborn-defending-elysium">Firstborn / Defending Elysium</a>
+          <span class="by">by</span>
+          <span class="author">Brandon Sanderson</span>
+        </li>
+        <li class="book" data-rating="3" data-isbn="1585424331"><a class="highlight" href="https://www.goodreads.com/book/show/1005.Think_and_Grow_Rich">Think and Grow Rich: The Landmark Bestseller Now Revised and Updated for the 21st Century</a>
+          <span class="by">by</span>
+          <span class="author">Napoleon Hill</span>
+        </li>
+        <li class="book" data-rating="3" data-isbn="8188575860"><a class="highlight" href="https://www.goodreads.com/book/show/575715.Anything_for_You_Ma_am">Anything for You, Ma'am: An IITian's Love Story</a>
+          <span class="by">by</span>
+          <span class="author">Tushar Raheja</span>
+        </li>
+        <li class="book" data-rating="4" data-isbn="0143029827"><a class="highlight" href="https://www.goodreads.com/book/show/693771.Ignited_Minds">Ignited Minds: Unleashing the Power Within India</a>
+          <span class="by">by</span>
+          <span class="author">A.P.J. Abdul Kalam</span>
+        </li>
+        <li class="book" data-rating="3" data-isbn="0553804693"><a class="highlight" href="https://www.goodreads.com/book/show/2890090-the-republic-of-thieves">The Republic of Thieves</a>
+          <span class="by">by</span>
+          <span class="author">Scott Lynch</span>
+        </li>
+        <li class="book" data-rating="0"><a class="highlight" href="https://www.goodreads.com/book/show/20405936-select-mode">Select Mode</a>
+          <span class="by">by</span>
+          <span class="author">Mark  Lawrence</span>
+        </li>
+        <li class="book" data-rating="4"><a class="highlight" href="https://www.goodreads.com/book/show/10852065-the-hope-of-elantris">The Hope of Elantris</a>
+          <span class="by">by</span>
+          <span class="author">Brandon Sanderson</span>
+        </li>
+        <li class="book" data-rating="4" data-isbn="0553804685"><a class="highlight" href="https://www.goodreads.com/book/show/887877.Red_Seas_Under_Red_Skies">Red Seas Under Red Skies</a>
+          <span class="by">by</span>
+          <span class="author">Scott Lynch</span>
+        </li>
+        <li class="book" data-rating="5" data-isbn="0575097396"><a class="highlight" href="https://www.goodreads.com/book/show/11543195-words-of-radiance">Words of Radiance</a>
+          <span class="by">by</span>
+          <span class="author">Brandon Sanderson</span>
+        </li>
+        <li class="book" data-rating="0" data-isbn="0553804677"><a class="highlight" href="https://www.goodreads.com/book/show/127455.The_Lies_of_Locke_Lamora">The Lies of Locke Lamora</a>
+          <span class="by">by</span>
+          <span class="author">Scott Lynch</span>
+        </li>
+        <li class="book" data-rating="4" data-isbn="0786838655"><a class="highlight" href="https://www.goodreads.com/book/show/28187.The_Lightning_Thief">The Lightning Thief</a>
+          <span class="by">by</span>
+          <span class="author">Rick Riordan</span>
+        </li>
+      </ul>
+      <h2>2013</h2>
+      <ul>
+        <li class="book" data-rating="4" data-isbn="0374109206"><a class="highlight" href="https://www.goodreads.com/book/show/17332226-dogfight">Dogfight: How Apple and Google Went to War and Started a Revolution</a>
+          <span class="by">by</span>
+          <span class="author">Fred Vogelstein</span>
+        </li>
+        <li class="book" data-rating="4" data-isbn="0676979343"><a class="highlight" href="https://www.goodreads.com/book/show/85301.Unaccustomed_Earth">Unaccustomed Earth</a>
+          <span class="by">by</span>
+          <span class="author">Jhumpa Lahiri</span>
+        </li>
+        <li class="book" data-rating="4" data-isbn="0449818438"><a class="highlight" href="https://www.goodreads.com/book/show/18966322-mitosis">Mitosis</a>
+          <span class="by">by</span>
+          <span class="author">Brandon Sanderson</span>
+        </li>
+        <li class="book" data-rating="5" data-isbn="0385743564"><a class="highlight" href="https://www.goodreads.com/book/show/17182126-steelheart">Steelheart</a>
+          <span class="by">by</span>
+          <span class="author">Brandon Sanderson</span>
+        </li>
+        <li class="book" data-rating="4" data-isbn="0060762209"><a class="highlight" href="https://www.goodreads.com/book/show/1117037.The_Double_Eagle">The Double Eagle</a>
+          <span class="by">by</span>
+          <span class="author">James Twining</span>
+        </li>
+        <li class="book" data-rating="0" data-isbn="8123706197"><a class="highlight" href="https://www.goodreads.com/book/show/5678950-it-happened-tomorrow">It Happened Tomorrow</a>
+          <span class="by">by</span>
+          <span class="author">Bal Phondke</span>
+        </li>
+        <li class="book" data-rating="4"><a class="highlight" href="https://www.goodreads.com/book/show/13552643-defending-elysium">Defending Elysium</a>
+          <span class="by">by</span>
+          <span class="author">Brandon Sanderson</span>
+        </li>
+        <li class="book" data-rating="4"><a class="highlight" href="https://www.goodreads.com/book/show/8562526-firstborn">Firstborn</a>
+          <span class="by">by</span>
+          <span class="author">Brandon Sanderson</span>
+        </li>
+        <li class="book" data-rating="5" data-isbn="0765350378"><a class="highlight" href="https://www.goodreads.com/book/show/68427.Elantris">Elantris</a>
+          <span class="by">by</span>
+          <span class="author">Brandon Sanderson</span>
+        </li>
+        <li class="book" data-rating="5" data-isbn="1616960922"><a class="highlight" href="https://www.goodreads.com/book/show/13578175-the-emperor-s-soul">The Emperor's Soul</a>
+          <span class="by">by</span>
+          <span class="author">Brandon Sanderson</span>
+        </li>
+        <li class="book" data-rating="3" data-isbn="0439925576"><a class="highlight" href="https://www.goodreads.com/book/show/7740659-alcatraz-versus-the-shattered-lens">Alcatraz Versus the Shattered Lens</a>
+          <span class="by">by</span>
+          <span class="author">Brandon Sanderson</span>
+        </li>
+        <li class="book" data-rating="3"><a class="highlight" href="https://www.goodreads.com/book/show/6366110-alcatraz-versus-the-knights-of-crystallia">Alcatraz Versus the Knights of Crystallia</a>
+          <span class="by">by</span>
+          <span class="author">Brandon Sanderson</span>
+        </li>
+        <li class="book" data-rating="3" data-isbn="0439925533"><a class="highlight" href="https://www.goodreads.com/book/show/3485562-alcatraz-versus-the-scrivener-s-bones">Alcatraz Versus the Scrivener's Bones</a>
+          <span class="by">by</span>
+          <span class="author">Brandon Sanderson</span>
+        </li>
+        <li class="book" data-rating="5" data-isbn="0812972155"><a class="highlight" href="https://www.goodreads.com/book/show/222146.Masters_of_Doom">Masters of Doom: How Two Guys Created an Empire and Transformed Pop Culture</a>
+          <span class="by">by</span>
+          <span class="author">David Kushner</span>
+        </li>
+        <li class="book" data-rating="3" data-isbn="1938570014"><a class="highlight" href="https://www.goodreads.com/book/show/16002459-legion">Legion</a>
+          <span class="by">by</span>
+          <span class="author">Brandon Sanderson</span>
+        </li>
+        <li class="book" data-rating="3" data-isbn="0439925509"><a class="highlight" href="https://www.goodreads.com/book/show/623976.Alcatraz_Versus_the_Evil_Librarians">Alcatraz Versus the Evil Librarians</a>
+          <span class="by">by</span>
+          <span class="author">Brandon Sanderson</span>
+        </li>
+        <li class="book" data-rating="4" data-isbn="0345336895"><a class="highlight" href="https://www.goodreads.com/book/show/485812.Broca_s_Brain">Broca's Brain: Reflections on the Romance of Science</a>
+          <span class="by">by</span>
+          <span class="author">Carl Sagan</span>
+        </li>
+        <li class="book" data-rating="5" data-isbn="0062255657"><a class="highlight" href="https://www.goodreads.com/book/show/15783514-the-ocean-at-the-end-of-the-lane">The Ocean at the End of the Lane</a>
+          <span class="by">by</span>
+          <span class="author">Neil Gaiman</span>
+        </li>
+        <li class="book" data-rating="4" data-isbn="0007423292"><a class="highlight" href="https://www.goodreads.com/book/show/9579634-prince-of-thorns">Prince of Thorns</a>
+          <span class="by">by</span>
+          <span class="author">Mark  Lawrence</span>
+        </li>
+        <li class="book" data-rating="4"><a class="highlight" href="https://www.goodreads.com/book/show/12499290-the-blinding-knife">The Blinding Knife</a>
+          <span class="by">by</span>
+          <span class="author">Brent Weeks</span>
+        </li>
+        <li class="book" data-rating="3" data-isbn="0316075558"><a class="highlight" href="https://www.goodreads.com/book/show/7165300-the-black-prism">The Black Prism</a>
+          <span class="by">by</span>
+          <span class="author">Brent Weeks</span>
+        </li>
+        <li class="book" data-rating="5" data-isbn="1884214495"><a class="highlight" href="https://www.goodreads.com/book/show/4808763-the-last-question">The Last Question</a>
+          <span class="by">by</span>
+          <span class="author">Isaac Asimov</span>
+        </li>
+        <li class="book" data-rating="4" data-isbn="0785132619"><a class="highlight" href="https://www.goodreads.com/book/show/3918010-kick-ass">Kick-Ass</a>
+          <span class="by">by</span>
+          <span class="author">Mark Millar</span>
+        </li>
+        <li class="book" data-rating="4" data-isbn="0785152458"><a class="highlight" href="https://www.goodreads.com/book/show/10871925-kick-ass-2">Kick-Ass 2</a>
+          <span class="by">by</span>
+          <span class="author">Mark Millar</span>
+        </li>
+        <li class="book" data-rating="0" data-isbn="0812511816"><a class="highlight" href="https://www.goodreads.com/book/show/228665.The_Eye_of_the_World">The Eye of the World</a>
+          <span class="by">by</span>
+          <span class="author">Robert Jordan</span>
+        </li>
+        <li class="book" data-rating="5" data-isbn="0340839937"><a class="highlight" href="https://www.goodreads.com/book/show/234225.Dune">Dune</a>
+          <span class="by">by</span>
+          <span class="author">Frank Herbert</span>
+        </li>
+        <li class="book" data-rating="4" data-isbn="0765342405"><a class="highlight" href="https://www.goodreads.com/book/show/9532.Ender_s_Shadow">Ender's Shadow</a>
+          <span class="by">by</span>
+          <span class="author">Orson Scott Card</span>
+        </li>
+        <li class="book" data-rating="4" data-isbn="1299859291"><a class="highlight" href="https://www.goodreads.com/book/show/15704458-steelheart">Steelheart</a>
+          <span class="by">by</span>
+          <span class="author">Brandon Sanderson</span>
+        </li>
+        <li class="book" data-rating="5" data-isbn="0765320320"><a class="highlight" href="https://www.goodreads.com/book/show/10137823-the-rithmatist">The Rithmatist</a>
+          <span class="by">by</span>
+          <span class="author">Brandon Sanderson</span>
+        </li>
+      </ul>
+      <h2>2012</h2>
+      <ul>
+        <li class="book" data-rating="5" data-isbn="0765365278"><a class="highlight" href="https://www.goodreads.com/book/show/9647295-the-way-of-kings">The Way of Kings</a>
+          <span class="by">by</span>
+          <span class="author">Brandon Sanderson</span>
+        </li>
+        <li class="book" data-rating="0" data-isbn="1423161610"><a class="highlight" href="https://www.goodreads.com/book/show/9307674-the-last-guardian">The Last Guardian</a>
+          <span class="by">by</span>
+          <span class="author">Eoin Colfer</span>
+        </li>
+        <li class="book" data-rating="3" data-isbn="0439709105"><a class="highlight" href="https://www.goodreads.com/book/show/28194.Inkheart">Inkheart</a>
+          <span class="by">by</span>
+          <span class="author">Cornelia Funke</span>
+        </li>
+        <li class="book" data-rating="3" data-isbn="1416524797"><a class="highlight" href="https://www.goodreads.com/book/show/960.Angels_Demons">Angels &amp; Demons</a>
+          <span class="by">by</span>
+          <span class="author">Dan Brown</span>
+        </li>
+        <li class="book" data-rating="5" data-isbn="0553381695"><a class="highlight" href="https://www.goodreads.com/book/show/10572.A_Clash_of_Kings">A Clash of Kings</a>
+          <span class="by">by</span>
+          <span class="author">George R.R. Martin</span>
+        </li>
+        <li class="book" data-rating="5"><a class="highlight" href="https://www.goodreads.com/book/show/62291.A_Storm_of_Swords">A Storm of Swords</a>
+          <span class="by">by</span>
+          <span class="author">George R.R. Martin</span>
+        </li>
+        <li class="book" data-rating="4" data-isbn="0553212419"><a class="highlight" href="https://www.goodreads.com/book/show/3581.Sherlock_Holmes">Sherlock Holmes: The Complete Novels and Stories, Volume I</a>
+          <span class="by">by</span>
+          <span class="author">Arthur Conan Doyle</span>
+        </li>
+        <li class="book" data-rating="3"><a class="highlight" href="https://www.goodreads.com/book/show/12067.Good_Omens">Good Omens: The Nice and Accurate Prophecies of Agnes Nutter, Witch</a>
+          <span class="by">by</span>
+          <span class="author">Terry Pratchett</span>
+        </li>
+        <li class="book" data-rating="0" data-isbn="1449307639"><a class="highlight" href="https://www.goodreads.com/book/show/12001393-managing-infrastructure-with-puppet">Managing Infrastructure with Puppet</a>
+          <span class="by">by</span>
+          <span class="author">James Loope</span>
+        </li>
+        <li class="book" data-rating="0" data-isbn="8173711461"><a class="highlight" href="https://www.goodreads.com/book/show/634583.Wings_of_Fire">Wings of Fire: An Autobiography</a>
+          <span class="by">by</span>
+          <span class="author">A.P.J. Abdul Kalam</span>
+        </li>
+        <li class="book" data-rating="4" data-isbn="0375507256"><a class="highlight" href="https://www.goodreads.com/book/show/49628.Cloud_Atlas">Cloud Atlas</a>
+          <span class="by">by</span>
+          <span class="author">David Mitchell</span>
+        </li>
+        <li class="book" data-rating="3" data-isbn="0446400513"><a class="highlight" href="https://www.goodreads.com/book/show/776384.One_Corpse_Too_Many">One Corpse Too Many</a>
+          <span class="by">by</span>
+          <span class="author">Ellis Peters</span>
+        </li>
+        <li class="book" data-rating="0" data-isbn="0812520475"><a class="highlight" href="https://www.goodreads.com/book/show/840278.Eon">Eon</a>
+          <span class="by">by</span>
+          <span class="author">Greg Bear</span>
+        </li>
+        <li class="book" data-rating="0" data-isbn="0312938993"><a class="highlight" href="https://www.goodreads.com/book/show/64863.A_is_for_Alibi">A is for Alibi</a>
+          <span class="by">by</span>
+          <span class="author">Sue Grafton</span>
+        </li>
+        <li class="book" data-rating="0" data-isbn="0553565079"><a class="highlight" href="https://www.goodreads.com/book/show/76679.Forward_the_Foundation">Forward the Foundation</a>
+          <span class="by">by</span>
+          <span class="author">Isaac Asimov</span>
+        </li>
+        <li class="book" data-rating="3"><a class="highlight" href="https://www.goodreads.com/book/show/30013.Prelude_to_Foundation">Prelude to Foundation</a>
+          <span class="by">by</span>
+          <span class="author">Isaac Asimov</span>
+        </li>
+        <li class="book" data-rating="4" data-isbn="0553587579"><a class="highlight" href="https://www.goodreads.com/book/show/29582.Foundation_and_Earth">Foundation and Earth</a>
+          <span class="by">by</span>
+          <span class="author">Isaac Asimov</span>
+        </li>
+        <li class="book" data-rating="4" data-isbn="0553293389"><a class="highlight" href="https://www.goodreads.com/book/show/76683.Foundation_s_Edge">Foundation's Edge</a>
+          <span class="by">by</span>
+          <span class="author">Isaac Asimov</span>
+        </li>
+        <li class="book" data-rating="5" data-isbn="0553803735"><a class="highlight" href="https://www.goodreads.com/book/show/29580.Second_Foundation">Second Foundation</a>
+          <span class="by">by</span>
+          <span class="author">Isaac Asimov</span>
+        </li>
+        <li class="book" data-rating="4" data-isbn="0553803727"><a class="highlight" href="https://www.goodreads.com/book/show/29581.Foundation_and_Empire">Foundation and Empire</a>
+          <span class="by">by</span>
+          <span class="author">Isaac Asimov</span>
+        </li>
+        <li class="book" data-rating="4" data-isbn="0553803719"><a class="highlight" href="https://www.goodreads.com/book/show/29579.Foundation">Foundation</a>
+          <span class="by">by</span>
+          <span class="author">Isaac Asimov</span>
+        </li>
+        <li class="book" data-rating="5" data-isbn="0812550706"><a class="highlight" href="https://www.goodreads.com/book/show/375802.Ender_s_Game">Ender's Game</a>
+          <span class="by">by</span>
+          <span class="author">Orson Scott Card</span>
+        </li>
+        <li class="book" data-rating="0" data-isbn="0553283936"><a class="highlight" href="https://www.goodreads.com/book/show/109510.The_Negotiator">The Negotiator</a>
+          <span class="by">by</span>
+          <span class="author">Frederick Forsyth</span>
+        </li>
+        <li class="book" data-rating="3" data-isbn="0763634093"><a class="highlight" href="https://www.goodreads.com/book/show/393147.The_Crow">The Crow</a>
+          <span class="by">by</span>
+          <span class="author">Alison Croggon</span>
+        </li>
+        <li class="book" data-rating="4" data-isbn="0763630152"><a class="highlight" href="https://www.goodreads.com/book/show/393145.The_Riddle">The Riddle</a>
+          <span class="by">by</span>
+          <span class="author">Alison Croggon</span>
+        </li>
+        <li class="book" data-rating="4" data-isbn="0763631620"><a class="highlight" href="https://www.goodreads.com/book/show/393146.The_Naming">The Naming</a>
+          <span class="by">by</span>
+          <span class="author">Alison Croggon</span>
+        </li>
+        <li class="book" data-rating="3" data-isbn="1406308021"><a class="highlight" href="https://www.goodreads.com/book/show/2550219.The_Singing">The Singing</a>
+          <span class="by">by</span>
+          <span class="author">Alison Croggon</span>
+        </li>
+        <li class="book" data-rating="2" data-isbn="0141383356"><a class="highlight" href="https://www.goodreads.com/book/show/2049993.Airman">Airman</a>
+          <span class="by">by</span>
+          <span class="author">Eoin Colfer</span>
+        </li>
+        <li class="book" data-rating="4" data-isbn="0553383663"><a class="highlight" href="https://www.goodreads.com/book/show/164323.The_Google_Story">The Google Story: Inside the Hottest Business, Media and Technology Success of Our Time</a>
+          <span class="by">by</span>
+          <span class="author">David A. Vise</span>
+        </li>
+        <li class="book" data-rating="4" data-isbn="0765316897"><a class="highlight" href="https://www.goodreads.com/book/show/2767793-the-hero-of-ages">The Hero of Ages</a>
+          <span class="by">by</span>
+          <span class="author">Brandon Sanderson</span>
+        </li>
+        <li class="book" data-rating="3" data-isbn="0765316889"><a class="highlight" href="https://www.goodreads.com/book/show/68429.The_Well_of_Ascension">The Well of Ascension</a>
+          <span class="by">by</span>
+          <span class="author">Brandon Sanderson</span>
+        </li>
+        <li class="book" data-rating="5" data-isbn="0575089911"><a class="highlight" href="https://www.goodreads.com/book/show/6547258-the-final-empire">The Final Empire</a>
+          <span class="by">by</span>
+          <span class="author">Brandon Sanderson</span>
+        </li>
+        <li class="book" data-rating="4" data-isbn="0330251457"><a class="highlight" href="https://www.goodreads.com/book/show/3285188-freedom-at-midnight">Freedom at Midnight</a>
+          <span class="by">by</span>
+          <span class="author">Larry Collins</span>
+        </li>
+        <li class="book" data-rating="4" data-isbn="0765330423"><a class="highlight" href="https://www.goodreads.com/book/show/10803121-the-alloy-of-law">The Alloy of Law</a>
+          <span class="by">by</span>
+          <span class="author">Brandon Sanderson</span>
+        </li>
+        <li class="book" data-rating="0" data-isbn="0763648434"><a class="highlight" href="https://www.goodreads.com/book/show/10635363-steampunk-an-anthology-of-fantastically-rich-and-strange-stories">Steampunk! An Anthology of Fantastically Rich and Strange Stories</a>
+          <span class="by">by</span>
+          <span class="author">Kelly Link</span>
+        </li>
+        <li class="book" data-rating="5" data-isbn="2266079999"><a class="highlight" href="https://www.goodreads.com/book/show/61666.Contact">Contact</a>
+          <span class="by">by</span>
+          <span class="author">Carl Sagan</span>
+        </li>
+        <li class="book" data-rating="4" data-isbn="1416562591"><a class="highlight" href="https://www.goodreads.com/book/show/1768603.The_White_Tiger">The White Tiger</a>
+          <span class="by">by</span>
+          <span class="author">Aravind Adiga</span>
+        </li>
+        <li class="book" data-rating="4" data-isbn="0312995059"><a class="highlight" href="https://www.goodreads.com/book/show/78983.Kane_Abel">Kane &amp; Abel</a>
+          <span class="by">by</span>
+          <span class="author">Jeffrey Archer</span>
+        </li>
+        <li class="book" data-rating="3" data-isbn="0449208060"><a class="highlight" href="https://www.goodreads.com/book/show/78989.Shall_We_Tell_the_President_">Shall We Tell the President?</a>
+          <span class="by">by</span>
+          <span class="author">Jeffrey Archer</span>
+        </li>
+        <li class="book" data-rating="4"><a class="highlight" href="https://www.goodreads.com/book/show/2122.The_Fountainhead">The Fountainhead</a>
+          <span class="by">by</span>
+          <span class="author">Ayn Rand</span>
+        </li>
+        <li class="book" data-rating="4" data-isbn="0452011876"><a class="highlight" href="https://www.goodreads.com/book/show/662.Atlas_Shrugged">Atlas Shrugged</a>
+          <span class="by">by</span>
+          <span class="author">Ayn Rand</span>
+        </li>
+        <li class="book" data-rating="4" data-isbn="0375508325"><a class="highlight" href="https://www.goodreads.com/book/show/55030.Cosmos">Cosmos</a>
+          <span class="by">by</span>
+          <span class="author">Carl Sagan</span>
+        </li>
+        <li class="book" data-rating="3" data-isbn="0061234001"><a class="highlight" href="https://www.goodreads.com/book/show/1202.Freakonomics">Freakonomics: A Rogue Economist Explores the Hidden Side of Everything</a>
+          <span class="by">by</span>
+          <span class="author">Steven D. Levitt</span>
+        </li>
+        <li class="book" data-rating="2" data-isbn="0099477319"><a class="highlight" href="https://www.goodreads.com/book/show/4610.Catch_22">Catch-22</a>
+          <span class="by">by</span>
+          <span class="author">Joseph Heller</span>
+        </li>
+        <li class="book" data-rating="3"><a class="highlight" href="https://www.goodreads.com/book/show/128518.The_Second_Jungle_Book">The Second Jungle Book</a>
+          <span class="by">by</span>
+          <span class="author">Rudyard Kipling</span>
+        </li>
+        <li class="book" data-rating="3" data-isbn="0061124265"><a class="highlight" href="https://www.goodreads.com/book/show/1431.Veronika_Decides_to_Die">Veronika Decides to Die</a>
+          <span class="by">by</span>
+          <span class="author">Paulo Coelho</span>
+        </li>
+        <li class="book" data-rating="3" data-isbn="0099642611"><a class="highlight" href="https://www.goodreads.com/book/show/327255.The_Fourth_Protocol">The Fourth Protocol</a>
+          <span class="by">by</span>
+          <span class="author">Frederick Forsyth</span>
+        </li>
+        <li class="book" data-rating="3" data-isbn="1842320114"><a class="highlight" href="https://www.goodreads.com/book/show/129833.The_Golden_Keel">The Golden Keel</a>
+          <span class="by">by</span>
+          <span class="author">Desmond Bagley</span>
+        </li>
+        <li class="book" data-rating="4" data-isbn="0349104522"><a class="highlight" href="https://www.goodreads.com/book/show/106139.The_Man_Who_Knew_Infinity">The Man Who Knew Infinity: A Life of the Genius Ramanujan</a>
+          <span class="by">by</span>
+          <span class="author">Robert Kanigel</span>
+        </li>
+        <li class="book" data-rating="0" data-isbn="0812504690"><a class="highlight" href="https://www.goodreads.com/book/show/77270.The_Jungle_Book">The Jungle Book</a>
+          <span class="by">by</span>
+          <span class="author">Rudyard Kipling</span>
+        </li>
+        <li class="book" data-rating="3" data-isbn="0553213970"><a class="highlight" href="https://www.goodreads.com/book/show/32829.Journey_to_the_Center_of_the_Earth">Journey to the Center of the Earth</a>
+          <span class="by">by</span>
+          <span class="author">Jules Verne</span>
+        </li>
+        <li class="book" data-rating="4"><a class="highlight" href="https://www.goodreads.com/book/show/54479.Around_the_World_in_Eighty_Days">Around the World in Eighty Days</a>
+          <span class="by">by</span>
+          <span class="author">Jules Verne</span>
+        </li>
+        <li class="book" data-rating="4" data-isbn="0679729917"><a class="highlight" href="https://www.goodreads.com/book/show/6330.The_Best_of_Roald_Dahl">The Best of Roald Dahl</a>
+          <span class="by">by</span>
+          <span class="author">Roald Dahl</span>
+        </li>
+        <li class="book" data-rating="2" data-isbn="8189975803"><a class="highlight" href="https://www.goodreads.com/book/show/5136544-captain-cool">Captain Cool: The M.S.Dhoni Story</a>
+          <span class="by">by</span>
+          <span class="author">Gulu Ezekiel</span>
+        </li>
+        <li class="book" data-rating="5"><a class="highlight" href="https://www.goodreads.com/book/show/7190.The_Three_Musketeers">The Three Musketeers</a>
+          <span class="by">by</span>
+          <span class="author">Alexandre Dumas</span>
+        </li>
+        <li class="book" data-rating="5" data-isbn="0321344758"><a class="highlight" href="https://www.goodreads.com/book/show/3368.Don_t_Make_Me_Think">Don't Make Me Think: A Common Sense Approach to Web Usability</a>
+          <span class="by">by</span>
+          <span class="author">Steve Krug</span>
+        </li>
+        <li class="book" data-rating="4" data-isbn="1455405671"><a class="highlight" href="https://www.goodreads.com/book/show/11867265-the-extraordinary-adventures-of-arsene-lupin-gentleman-burglar">The Extraordinary Adventures of Arsene Lupin, Gentleman-Burglar</a>
+          <span class="by">by</span>
+          <span class="author">Maurice Leblanc</span>
+        </li>
+        <li class="book" data-rating="3" data-isbn="0752863886"><a class="highlight" href="https://www.goodreads.com/book/show/15769.The_Bourne_Supremacy">The Bourne Supremacy</a>
+          <span class="by">by</span>
+          <span class="author">Robert Ludlum</span>
+        </li>
+        <li class="book" data-rating="3" data-isbn="0671027387"><a class="highlight" href="https://www.goodreads.com/book/show/976.Deception_Point">Deception Point</a>
+          <span class="by">by</span>
+          <span class="author">Dan Brown</span>
+        </li>
+        <li class="book" data-rating="3"><a class="highlight" href="https://www.goodreads.com/book/show/11125.Digital_Fortress">Digital Fortress</a>
+          <span class="by">by</span>
+          <span class="author">Dan Brown</span>
+        </li>
+        <li class="book" data-rating="4" data-isbn="0553380168"><a class="highlight" href="https://www.goodreads.com/book/show/3869.A_Brief_History_of_Time">A Brief History of Time</a>
+          <span class="by">by</span>
+          <span class="author">Stephen Hawking</span>
+        </li>
+        <li class="book" data-rating="5" data-isbn="0743278909"><a class="highlight" href="https://www.goodreads.com/book/show/71728.Jonathan_Livingston_Seagull">Jonathan Livingston Seagull</a>
+          <span class="by">by</span>
+          <span class="author">Richard Bach</span>
+        </li>
+        <li class="book" data-rating="1"><a class="highlight" href="https://www.goodreads.com/book/show/7913305-the-immortals-of-meluha">The Immortals of Meluha</a>
+          <span class="by">by</span>
+          <span class="author">Amish Tripathi</span>
+        </li>
+        <li class="book" data-rating="2" data-isbn="0345498321"><a class="highlight" href="https://www.goodreads.com/book/show/105578.One_Night_at_the_Call_Center">One Night at the Call Center</a>
+          <span class="by">by</span>
+          <span class="author">Chetan Bhagat</span>
+        </li>
+        <li class="book" data-rating="4"><a class="highlight" href="https://www.goodreads.com/book/show/22034.The_Godfather">The Godfather</a>
+          <span class="by">by</span>
+          <span class="author">Mario Puzo</span>
+        </li>
+        <li class="book" data-rating="4" data-isbn="0091883768"><a class="highlight" href="https://www.goodreads.com/book/show/4894.Who_Moved_My_Cheese_">Who Moved My Cheese?</a>
+          <span class="by">by</span>
+          <span class="author">Spencer Johnson</span>
+        </li>
+        <li class="book" data-rating="2" data-isbn="0751532711"><a class="highlight" href="https://www.goodreads.com/book/show/69571.Rich_Dad_Poor_Dad">Rich Dad, Poor Dad</a>
+          <span class="by">by</span>
+          <span class="author">Robert T. Kiyosaki</span>
+        </li>
+        <li class="book" data-rating="4"><a class="highlight" href="https://www.goodreads.com/book/show/4865.How_to_Win_Friends_and_Influence_People">How to Win Friends and Influence People</a>
+          <span class="by">by</span>
+          <span class="author">Dale Carnegie</span>
+        </li>
+        <li class="book" data-rating="5" data-isbn="0345418905"><a class="highlight" href="https://www.goodreads.com/book/show/8694.Life_the_Universe_and_Everything">Life, the Universe and Everything</a>
+          <span class="by">by</span>
+          <span class="author">Douglas Adams</span>
+        </li>
+        <li class="book" data-rating="3"><a class="highlight" href="https://www.goodreads.com/book/show/38508.The_Firm">The Firm</a>
+          <span class="by">by</span>
+          <span class="author">John Grisham</span>
+        </li>
+        <li class="book" data-rating="0" data-isbn="0091816971"><a class="highlight" href="https://www.goodreads.com/book/show/486381.Who_Moved_My_Cheese_">Who Moved My Cheese?: An Amazing Way to Deal with Change in Your Work and in Your Life</a>
+          <span class="by">by</span>
+          <span class="author">Spencer Johnson</span>
+        </li>
+        <li class="book" data-rating="5" data-isbn="8171823696"><a class="highlight" href="https://www.goodreads.com/book/show/1091318._">चंद्रकांता</a>
+          <span class="by">by</span>
+          <span class="author">Babu Devakinandan Khatri</span>
+        </li>
+        <li class="book" data-rating="3" data-isbn="1423128192"><a class="highlight" href="https://www.goodreads.com/book/show/7005865-the-atlantis-complex">The Atlantis Complex</a>
+          <span class="by">by</span>
+          <span class="author">Eoin Colfer</span>
+        </li>
+        <li class="book" data-rating="4"><a class="highlight" href="https://www.goodreads.com/book/show/2179276.The_Time_Paradox">The Time Paradox</a>
+          <span class="by">by</span>
+          <span class="author">Eoin Colfer</span>
+        </li>
+        <li class="book" data-rating="4" data-isbn="0545010098"><a class="highlight" href="https://www.goodreads.com/book/show/2358870.Artemis_Fowl_Boxed_Set_Bks_1_5">Artemis Fowl Boxed Set, Bks 1-5</a>
+          <span class="by">by</span>
+          <span class="author">Eoin Colfer</span>
+        </li>
+        <li class="book" data-rating="3" data-isbn="0375856110"><a class="highlight" href="https://www.goodreads.com/book/show/7664041-inheritance">Inheritance</a>
+          <span class="by">by</span>
+          <span class="author">Christopher Paolini</span>
+        </li>
+        <li class="book" data-rating="3" data-isbn="0375846158"><a class="highlight" href="https://www.goodreads.com/book/show/2479827.Eragon_Eldest_Brisingr">Eragon, Eldest &amp; Brisingr</a>
+          <span class="by">by</span>
+          <span class="author">Christopher Paolini</span>
+        </li>
+        <li class="book" data-rating="3" data-isbn="0316068047"><a class="highlight" href="https://www.goodreads.com/book/show/1656001.The_Host">The Host</a>
+          <span class="by">by</span>
+          <span class="author">Stephenie Meyer</span>
+        </li>
+        <li class="book" data-rating="3" data-isbn="1439148503"><a class="highlight" href="https://www.goodreads.com/book/show/6320534-under-the-dome">Under the Dome</a>
+          <span class="by">by</span>
+          <span class="author">Stephen King</span>
+        </li>
+        <li class="book" data-rating="3" data-isbn="0451167309"><a class="highlight" href="https://www.goodreads.com/book/show/759586.Paper_Money">Paper Money</a>
+          <span class="by">by</span>
+          <span class="author">Ken Follett</span>
+        </li>
+        <li class="book" data-rating="3" data-isbn="0330345052"><a class="highlight" href="https://www.goodreads.com/book/show/41692.Modigliani_Scandal">Modigliani Scandal</a>
+          <span class="by">by</span>
+          <span class="author">Ken Follett</span>
+        </li>
+        <li class="book" data-rating="3" data-isbn="0451216725"><a class="highlight" href="https://www.goodreads.com/book/show/5052.Code_to_Zero">Code to Zero</a>
+          <span class="by">by</span>
+          <span class="author">Ken Follett</span>
+        </li>
+        <li class="book" data-rating="3" data-isbn="0451210743"><a class="highlight" href="https://www.goodreads.com/book/show/92375.Hornet_Flight">Hornet Flight</a>
+          <span class="by">by</span>
+          <span class="author">Ken Follett</span>
+        </li>
+        <li class="book" data-rating="4" data-isbn="0451210468"><a class="highlight" href="https://www.goodreads.com/book/show/92371.Lie_Down_with_Lions">Lie Down with Lions</a>
+          <span class="by">by</span>
+          <span class="author">Ken Follett</span>
+        </li>
+        <li class="book" data-rating="5"><a class="highlight" href="https://www.goodreads.com/book/show/92364.Eye_of_the_Needle">Eye of the Needle</a>
+          <span class="by">by</span>
+          <span class="author">Ken Follett</span>
+        </li>
+        <li class="book" data-rating="4" data-isbn="0525951652"><a class="highlight" href="https://www.goodreads.com/book/show/7315573-fall-of-giants">Fall of Giants</a>
+          <span class="by">by</span>
+          <span class="author">Ken Follett</span>
+        </li>
+        <li class="book" data-rating="5"><a class="highlight" href="https://www.goodreads.com/book/show/5064.World_Without_End">World Without End</a>
+          <span class="by">by</span>
+          <span class="author">Ken Follett</span>
+        </li>
+        <li class="book" data-rating="5"><a class="highlight" href="https://www.goodreads.com/book/show/5043.The_Pillars_of_the_Earth">The Pillars of the Earth</a>
+          <span class="by">by</span>
+          <span class="author">Ken Follett</span>
+        </li>
+        <li class="book" data-rating="5"><a class="highlight" href="https://www.goodreads.com/book/show/7937843-room">Room</a>
+          <span class="by">by</span>
+          <span class="author">Emma Donoghue</span>
+        </li>
+        <li class="book" data-rating="3" data-isbn="0689040342"><a class="highlight" href="https://www.goodreads.com/book/show/103386.The_Spiderwick_Chronicles_Box_Set">The Spiderwick Chronicles Box Set</a>
+          <span class="by">by</span>
+          <span class="author">Tony DiTerlizzi</span>
+        </li>
+        <li class="book" data-rating="5" data-isbn="0618042245"><a class="highlight" href="https://www.goodreads.com/book/show/3007740-the-war-of-the-ring">The War of the Ring</a>
+          <span class="by">by</span>
+          <span class="author">J.R.R. Tolkien</span>
+        </li>
+        <li class="book" data-rating="3" data-isbn="8183860265"><a class="highlight" href="https://www.goodreads.com/book/show/2260704.Conspiracy_of_Calaspia">Conspiracy of Calaspia</a>
+          <span class="by">by</span>
+          <span class="author">Suresh Guptara</span>
+        </li>
+        <li class="book" data-rating="2" data-isbn="0385735294"><a class="highlight" href="https://www.goodreads.com/book/show/4588949-the-sorceress">The Sorceress</a>
+          <span class="by">by</span>
+          <span class="author">Michael Scott</span>
+        </li>
+        <li class="book" data-rating="3" data-isbn="0385733585"><a class="highlight" href="https://www.goodreads.com/book/show/2402971.The_Magician">The Magician</a>
+          <span class="by">by</span>
+          <span class="author">Michael Scott</span>
+        </li>
+        <li class="book" data-rating="3" data-isbn="0385733577"><a class="highlight" href="https://www.goodreads.com/book/show/977841.The_Alchemyst">The Alchemyst</a>
+          <span class="by">by</span>
+          <span class="author">Michael Scott</span>
+        </li>
+        <li class="book" data-rating="4" data-isbn="0060530928"><a class="highlight" href="https://www.goodreads.com/book/show/2213661.The_Graveyard_Book">The Graveyard Book</a>
+          <span class="by">by</span>
+          <span class="author">Neil Gaiman</span>
+        </li>
+        <li class="book" data-rating="3" data-isbn="0060557818"><a class="highlight" href="https://www.goodreads.com/book/show/14497.Neverwhere">Neverwhere</a>
+          <span class="by">by</span>
+          <span class="author">Neil Gaiman</span>
+        </li>
+        <li class="book" data-rating="3"><a class="highlight" href="https://www.goodreads.com/book/show/1967070.Coraline">Coraline</a>
+          <span class="by">by</span>
+          <span class="author">P. Craig Russell</span>
+        </li>
+        <li class="book" data-rating="4" data-isbn="0061689246"><a class="highlight" href="https://www.goodreads.com/book/show/3629286-stardust">Stardust</a>
+          <span class="by">by</span>
+          <span class="author">Neil Gaiman</span>
+        </li>
+        <li class="book" data-rating="5"><a class="highlight" href="https://www.goodreads.com/book/show/186074.The_Name_of_the_Wind">The Name of the Wind</a>
+          <span class="by">by</span>
+          <span class="author">Patrick Rothfuss</span>
+        </li>
+        <li class="book" data-rating="5" data-isbn="0756404738"><a class="highlight" href="https://www.goodreads.com/book/show/1215032.The_Wise_Man_s_Fear">The Wise Man's Fear</a>
+          <span class="by">by</span>
+          <span class="author">Patrick Rothfuss</span>
+        </li>
+        <li class="book" data-rating="4"><a class="highlight" href="https://www.goodreads.com/book/show/3992598-the-demigod-files">The Demigod Files</a>
+          <span class="by">by</span>
+          <span class="author">Rick Riordan</span>
+        </li>
+        <li class="book" data-rating="3" data-isbn="0739380338"><a class="highlight" href="https://www.goodreads.com/book/show/4502507-the-last-olympian">The Last Olympian</a>
+          <span class="by">by</span>
+          <span class="author">Rick Riordan</span>
+        </li>
+        <li class="book" data-rating="3" data-isbn="0141382899"><a class="highlight" href="https://www.goodreads.com/book/show/561456.The_Titan_s_Curse">The Titan's Curse</a>
+          <span class="by">by</span>
+          <span class="author">Rick Riordan</span>
+        </li>
+        <li class="book" data-rating="3"><a class="highlight" href="https://www.goodreads.com/book/show/2120932.The_Battle_of_the_Labyrinth">The Battle of the Labyrinth</a>
+          <span class="by">by</span>
+          <span class="author">Rick Riordan</span>
+        </li>
+        <li class="book" data-rating="3" data-isbn="0786856866"><a class="highlight" href="https://www.goodreads.com/book/show/28186.The_Sea_of_Monsters">The Sea of Monsters</a>
+          <span class="by">by</span>
+          <span class="author">Rick Riordan</span>
+        </li>
+        <li class="book" data-rating="4"><a class="highlight" href="https://www.goodreads.com/book/show/14201.Jonathan_Strange_Mr_Norrell">Jonathan Strange &amp; Mr Norrell</a>
+          <span class="by">by</span>
+          <span class="author">Susanna Clarke</span>
+        </li>
+        <li class="book" data-rating="3"><a class="highlight" href="https://www.goodreads.com/book/show/6892870-the-girl-who-kicked-the-hornet-s-nest">The Girl Who Kicked the Hornet's Nest</a>
+          <span class="by">by</span>
+          <span class="author">Stieg Larsson</span>
+        </li>
+        <li class="book" data-rating="4" data-isbn="0307269981"><a class="highlight" href="https://www.goodreads.com/book/show/5060378-the-girl-who-played-with-fire">The Girl Who Played with Fire</a>
+          <span class="by">by</span>
+          <span class="author">Stieg Larsson</span>
+        </li>
+        <li class="book" data-rating="5"><a class="highlight" href="https://www.goodreads.com/book/show/2429135.The_Girl_with_the_Dragon_Tattoo">The Girl with the Dragon Tattoo</a>
+          <span class="by">by</span>
+          <span class="author">Stieg Larsson</span>
+        </li>
+        <li class="book" data-rating="3" data-isbn="0439023491"><a class="highlight" href="https://www.goodreads.com/book/show/6148028-catching-fire">Catching Fire</a>
+          <span class="by">by</span>
+          <span class="author">Suzanne Collins</span>
+        </li>
+        <li class="book" data-rating="3" data-isbn="0439023513"><a class="highlight" href="https://www.goodreads.com/book/show/7260188-mockingjay">Mockingjay</a>
+          <span class="by">by</span>
+          <span class="author">Suzanne Collins</span>
+        </li>
+        <li class="book" data-rating="4" data-isbn="0439023483"><a class="highlight" href="https://www.goodreads.com/book/show/2767052-the-hunger-games">The Hunger Games</a>
+          <span class="by">by</span>
+          <span class="author">Suzanne Collins</span>
+        </li>
+        <li class="book" data-rating="2"><a class="highlight" href="https://www.goodreads.com/book/show/4502877-midnight-sun-2008-draft">Midnight Sun [2008 Draft]</a>
+          <span class="by">by</span>
+          <span class="author">Stephenie Meyer</span>
+        </li>
+        <li class="book" data-rating="1"><a class="highlight" href="https://www.goodreads.com/book/show/1162543.Breaking_Dawn">Breaking Dawn</a>
+          <span class="by">by</span>
+          <span class="author">Stephenie Meyer</span>
+        </li>
+        <li class="book" data-rating="1" data-isbn="0316160202"><a class="highlight" href="https://www.goodreads.com/book/show/428263.Eclipse">Eclipse</a>
+          <span class="by">by</span>
+          <span class="author">Stephenie Meyer</span>
+        </li>
+        <li class="book" data-rating="1"><a class="highlight" href="https://www.goodreads.com/book/show/49041.New_Moon">New Moon</a>
+          <span class="by">by</span>
+          <span class="author">Stephenie Meyer</span>
+        </li>
+        <li class="book" data-rating="2" data-isbn="0316015849"><a class="highlight" href="https://www.goodreads.com/book/show/41865.Twilight">Twilight</a>
+          <span class="by">by</span>
+          <span class="author">Stephenie Meyer</span>
+        </li>
+        <li class="book" data-rating="3" data-isbn="0441013570"><a class="highlight" href="https://www.goodreads.com/book/show/365975.Coyote_Frontier">Coyote Frontier</a>
+          <span class="by">by</span>
+          <span class="author">Allen M. Steele</span>
+        </li>
+        <li class="book" data-rating="3" data-isbn="0441012515"><a class="highlight" href="https://www.goodreads.com/book/show/365978.Coyote_Rising">Coyote Rising</a>
+          <span class="by">by</span>
+          <span class="author">Allen M. Steele</span>
+        </li>
+        <li class="book" data-rating="4" data-isbn="0441011160"><a class="highlight" href="https://www.goodreads.com/book/show/686344.Coyote">Coyote</a>
+          <span class="by">by</span>
+          <span class="author">Allen M. Steele</span>
+        </li>
+        <li class="book" data-rating="4" data-isbn="1451648537"><a class="highlight" href="https://www.goodreads.com/book/show/11084145-steve-jobs">Steve Jobs</a>
+          <span class="by">by</span>
+          <span class="author">Walter Isaacson</span>
+        </li>
+        <li class="book" data-rating="4" data-isbn="0141000511"><a class="highlight" href="https://www.goodreads.com/book/show/56829.Hackers">Hackers: Heroes of the Computer Revolution</a>
+          <span class="by">by</span>
+          <span class="author">Steven Levy</span>
+        </li>
+        <li class="book" data-rating="4" data-isbn="1416596585"><a class="highlight" href="https://www.goodreads.com/book/show/7841446-in-the-plex">In the Plex: How Google Thinks, Works, and Shapes Our Lives</a>
+          <span class="by">by</span>
+          <span class="author">Steven Levy</span>
+        </li>
+        <li class="book" data-rating="3"><a class="highlight" href="https://www.goodreads.com/book/show/18160.The_Art_of_Deception">The Art of Deception: Controlling the Human Element of Security</a>
+          <span class="by">by</span>
+          <span class="author">Kevin D. Mitnick</span>
+        </li>
+        <li class="book" data-rating="3" data-isbn="0471782661"><a class="highlight" href="https://www.goodreads.com/book/show/18159.The_Art_of_Intrusion">The Art of Intrusion: The Real Stories Behind the Exploits of Hackers, Intruders and Deceivers</a>
+          <span class="by">by</span>
+          <span class="author">Kevin D. Mitnick</span>
+        </li>
+        <li class="book" data-rating="3" data-isbn="0316037702"><a class="highlight" href="https://www.goodreads.com/book/show/10256723-ghost-in-the-wires">Ghost in the Wires: My Adventures as the World's Most Wanted Hacker</a>
+          <span class="by">by</span>
+          <span class="author">Kevin D. Mitnick</span>
+        </li>
+        <li class="book" data-rating="5" data-isbn="0553588486"><a class="highlight" href="https://www.goodreads.com/book/show/13496.A_Game_of_Thrones">A Game of Thrones</a>
+          <span class="by">by</span>
+          <span class="author">George R.R. Martin</span>
+        </li>
+        <li class="book" data-rating="4"><a class="highlight" href="https://www.goodreads.com/book/show/4407.American_Gods">American Gods</a>
+          <span class="by">by</span>
+          <span class="author">Neil Gaiman</span>
+        </li>
+        <li class="book" data-rating="5" data-isbn="0061186422"><a class="highlight" href="https://www.goodreads.com/book/show/47699.M_Is_for_Magic">M Is for Magic</a>
+          <span class="by">by</span>
+          <span class="author">Neil Gaiman</span>
+        </li>
+        <li class="book" data-rating="4" data-isbn="0765348780"><a class="highlight" href="https://www.goodreads.com/book/show/55399.Gardens_of_the_Moon">Gardens of the Moon</a>
+          <span class="by">by</span>
+          <span class="author">Steven Erikson</span>
+        </li>
+        <li class="book" data-rating="4" data-isbn="1934356727"><a class="highlight" href="https://www.goodreads.com/book/show/9586547-pragmatic-guide-to-git">Pragmatic Guide to Git</a>
+          <span class="by">by</span>
+          <span class="author">Travis Swicegood</span>
+        </li>
+      </ul>
+      <h2>2011</h2>
+      <ul>
+        <li class="book" data-rating="3"><a class="highlight" href="https://www.goodreads.com/book/show/376663.Captain_Nemo">Captain Nemo</a>
+          <span class="by">by</span>
+          <span class="author">Kevin J. Anderson</span>
+        </li>
+        <li class="book" data-rating="2" data-isbn="0385504225"><a class="highlight" href="https://www.goodreads.com/book/show/6411961-the-lost-symbol">The Lost Symbol</a>
+          <span class="by">by</span>
+          <span class="author">Dan Brown</span>
+        </li>
+        <li class="book" data-rating="5" data-isbn="0061122416"><a class="highlight" href="https://www.goodreads.com/book/show/865.The_Alchemist">The Alchemist</a>
+          <span class="by">by</span>
+          <span class="author">Paulo Coelho</span>
+        </li>
+        <li class="book" data-rating="4"><a class="highlight" href="https://www.goodreads.com/book/show/968.The_Da_Vinci_Code">The Da Vinci Code</a>
+          <span class="by">by</span>
+          <span class="author">Dan Brown</span>
+        </li>
+        <li class="book" data-rating="4" data-isbn="0618260307"><a class="highlight" href="https://www.goodreads.com/book/show/5907.The_Hobbit_or_There_and_Back_Again">The Hobbit, or There and Back Again</a>
+          <span class="by">by</span>
+          <span class="author">J.R.R. Tolkien</span>
+        </li>
+      </ul>
+      <h2>2010</h2>
+      <ul>
+        <li class="book" data-rating="4"><a class="highlight" href="https://www.goodreads.com/book/show/77203.The_Kite_Runner">The Kite Runner</a>
+          <span class="by">by</span>
+          <span class="author">Khaled Hosseini</span>
+        </li>
+      </ul>
+      <h2>2008</h2>
+      <ul>
+        <li class="book" data-rating="2"><a class="highlight" href="https://www.goodreads.com/book/show/3320520-the-3-mistakes-of-my-life">The 3 Mistakes of My Life</a>
+          <span class="by">by</span>
+          <span class="author">Chetan Bhagat</span>
+        </li>
+        <li class="book" data-rating="4" data-isbn="0786817879"><a class="highlight" href="https://www.goodreads.com/book/show/249747.Artemis_Fowl">Artemis Fowl</a>
+          <span class="by">by</span>
+          <span class="author">Eoin Colfer</span>
+        </li>
+      </ul>
+      <section class="footnotes">
+        <p id="fn1"><a class="footnotes__link" href="#r1">[1]</a>
+          Read or listened; audiobooks are great companions for long runs
+          and I find them in some ways superior to paper books.
+        </p>
+      </section>
+    </main>
+    <footer class="footer"><a class="footer__link" href="https://blog.gnclmorais.com">Blog</a>,
+      <a class="footer__link" href="https://github.com/gnclmorais">GitHub</a>,
+      <a class="footer__link" href="https://twitter.com/gnclmorais">Twitter</a><a class="footer__link pull-right" href="https://github.com/gnclmorais/bookshelf">Check out the code</a>
+    </footer>
+  </body>
+</html>
